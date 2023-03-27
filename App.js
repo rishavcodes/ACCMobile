@@ -1,44 +1,31 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
 import MyComponent from "./Components/MyComponent";
 import { Button } from "react-native-paper";
 import BottomBar from "./Components/BottomBar";
 import TopBar from "./Components/TopBar";
 import SearchBar from "./Components/SearchBar";
+import Landing from "./Pages/Landing";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator  } from "@react-navigation/native-stack";
+import Testing from "./Pages/Testing";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [name, setName] = useState("test");
-
-  const clickHandler = () => {
-    setName("update");
-  };
   return (
     <PaperProvider>
-      <TopBar title="Search" />
-      <View style={styles.container}>
-        <SearchBar />
-      </View>
-      <View style={styles.container}>
-        
-        <View>
-          <Text>Things to do: </Text>
-          <Text>Filter beside search bar </Text>
-          <Text>Side Hamborger bar </Text>
-          <Text>Toggle button </Text>
-          <Text>Cards </Text>
-          <Text>Home page </Text>
-          <Text>Notifications </Text>
-          
-        </View>    
-
-        <StatusBar style="auto" />
-      </View>
-
-      <View style={styles.flexB}>
-        <BottomBar />
-      </View>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false
+          }}>
+          <Stack.Screen name="landing" component={Landing} />
+          <Stack.Screen name="testing" component={Testing} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </PaperProvider>
   );
 }
