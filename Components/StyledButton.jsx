@@ -109,7 +109,7 @@ function StyledButton(props) {
  */}
       {variant === "pinkBtn" && (
         <Button mode="contained" buttonColor="#F83E7D" style={styles.signupStyle} onPress={() => navigation.navigate('landing')}>
-          {text}
+          <Text style={{color: "#fff", fontSize: 18}}>{text}</Text>
         </Button>
       )}
     </>

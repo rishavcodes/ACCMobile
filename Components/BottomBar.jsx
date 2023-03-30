@@ -22,10 +22,10 @@ const BottomBar = () => {
       ]}
       safeAreaInsets={{ bottom }}
       elevated>
-      <Appbar.Action icon="home-variant-outline" onPress={() => navigation.navigate('testing')} />
+      <Appbar.Action icon="home-variant-outline" onPress={() => navigation.navigate('signin')} />
       <Appbar.Action icon="magnify" color="#0045F1" onPress={() => navigation.navigate('landing')} />
       <FAB mode="elevated" size="medium" icon="plus" onPress={() => {}} style={styles.fab}/>
-      <Appbar.Action icon="calendar" onPress={() => {}} />
+      <Appbar.Action icon="calendar" onPress={() => navigation.navigate('onboarding')} />
       <Appbar.Action icon="bell-outline" onPress={() => {}} />
     </Appbar>
   );

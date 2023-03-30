@@ -9,8 +9,10 @@ import TopBar from "./Components/TopBar";
 import SearchBar from "./Components/SearchBar";
 import Landing from "./Pages/Landing";
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator  } from "@react-navigation/native-stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Testing from "./Pages/Testing";
+import SignIn from "./Pages/SignIn";
+import OnBoarding from "./Pages/OnBoarding";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,10 +22,11 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            headerShown: false
+            headerShown: false,
           }}>
+          <Stack.Screen name="onboarding" component={OnBoarding} />
+          <Stack.Screen name="signin" component={SignIn} />
           <Stack.Screen name="landing" component={Landing} />
-          <Stack.Screen name="testing" component={Testing} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
