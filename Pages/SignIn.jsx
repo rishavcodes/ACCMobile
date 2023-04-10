@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     fontSize: 36,
     textAlign: "center",
+    fontFamily: 'Roboto'
   },
   header2: {
     marginTop: 20,

@@ -8,8 +8,10 @@ import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
 import StyledButton from "../Components/StyledButton";
+import { TextInput } from "react-native-paper";
 
 export default function Landing() {
+  const [text, setText] = React.useState("");
   return (
     <>
       <TopBar title="Search" />
@@ -20,8 +22,23 @@ export default function Landing() {
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.top}>
-            
-            <StyledButton variant='pinkBtn' text='Press Me'/>
+            <TextInput
+              label="Email*"
+              value={text}
+              onChangeText={(text) => setText(text)}
+              style={{ backgroundColor: "#FFF", width: "80%" }}
+              required
+            />
+            <TextInput
+              label="Password*"
+              value={text}
+              onChangeText={(text) => setText(text)}
+              style={{ backgroundColor: "#FFF", width: "80%" }}
+              required
+            />
+            <StyledButton variant="pinkBtn" text="Login" />
+          </View>
+          <View style={styles.top}>
             <Text>Things to do: </Text>
             <Text>Filter beside search bar </Text>
             <Text>Side Hamborger bar </Text>
@@ -89,8 +106,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 20,
   },
   searchBar: {
     backgroundColor: "white",
@@ -104,6 +119,8 @@ const styles = StyleSheet.create({
   },
   top: {
     marginTop: 100,
+    alignItems: "center",
+    width: "100%",
   },
   boldText: {
     fontWeight: "bold",

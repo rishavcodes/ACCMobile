@@ -5,6 +5,7 @@ import { Image } from "react-native";
 import homepage from "../assets/onboarding1.svg";
 import { Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import StyledButton from "../Components/StyledButton";
 
 export default function OnBoarding() {
   const navigation = useNavigation();
@@ -39,10 +40,27 @@ export default function OnBoarding() {
       {/* onBoarding Page 2 */}
       <View style={styles.slide2}>
         <Text style={styles.text}>Page 2</Text>
+        <View style={styles.center}>
+          <Image source={homepage} style={{ width: 200, height: 200 }} />
+
+          <Text style={{ fontSize: 48, fontWeight: "bold", color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
+          <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
+            Aisha Comfortable Co-living provides the utmost safety and connection to all women.
+          </Text>
+        </View>
       </View>
       {/* onBoarding Page 3 */}
       <View style={styles.slide3}>
         <Text style={styles.text}>Page 3</Text>
+        <View style={styles.center}>
+          <Image source={homepage} style={{ width: 200, height: 200 }} />
+
+          <Text style={{ fontSize: 48, fontWeight: "bold", color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
+          <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
+            Aisha Comfortable Co-living provides the utmost safety and connection to all women.
+          </Text>
+          <StyledButton variant="pinkBtn" text="" link="signin"/>
+        </View>
       </View>
     </Swiper>
   );

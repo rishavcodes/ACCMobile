@@ -11,8 +11,8 @@ import Landing from "./Pages/Landing";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Testing from "./Pages/Testing";
-import SignIn from "./Pages/SignIn";
 import OnBoarding from "./Pages/OnBoarding";
+import SignIn from "./Pages/SignIn";
 
 const Stack = createNativeStackNavigator();
 
