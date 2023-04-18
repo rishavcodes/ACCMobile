@@ -10,29 +10,27 @@ import SearchBar from "../Components/SearchBar";
 import homepage from "../assets/homepage.png";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
-import theme from '../Pages/pageStyles/theme';
-
-
+import signStyles from "../Pages/pageStyles/signStyles.js";
 
 
 export default function SignIn() {
   const navigation = useNavigation();
   return (
     <>
-      <ImageBackground source={homepage} style={styles.backgroundImage}>
-        <View style={styles.container}>
-          <View style={styles.top}>
-            <Text style={styles.header}>Aisha Comfortable Coliving</Text>
-            <Text style={{ ...styles.header2, color: "#22293A" }}>
+      <ImageBackground source={homepage} style={signStyles.backgroundImage}>
+        <View style={signStyles.container}>
+          <View style={signStyles.top}>
+            <Text style={signStyles.header}>Aisha Comfortable Coliving</Text>
+            <Text style={{ ...signStyles.header2, color: "#22293A" }}>
               Comfortable, Sustainable, and Community Oriented
             </Text>
           </View>
 
           <View style={{ marginTop: 350 }}>
-            <StyledButton variant="pinkBtn" text="Sign In"/>
+            <StyledButton variant="pinkBtn" text="Sign In" />
           </View>
           <View>
-            <Text style={{ ...styles.header2, color: "#fff" }}>Don’t have an account?</Text>
+            <Text style={{ ...signStyles.header2, color: "#fff" }}>Don’t have an account?</Text>
             <Button onPress={() => navigation.navigate("landing")}>
               <Text
                 style={{
@@ -52,45 +50,4 @@ export default function SignIn() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    paddingHorizontal: 20,
-  },
-  searchBar: {
-    paddingHorizontal: 20,
-  },
-  flexB: {
-    flex: 1,
-  },
-  header: {
-    color: "#fff",
-    marginTop: 30,
-    fontWeight: 700,
-    fontSize: 36,
-    textAlign: "center",
-    fontFamily: 'msBold'
-  },
-  header2: {
-    marginTop: 20,
-    fontWeight: 400,
-    fontSize: 20,
-    textAlign: "center",
-  },
-  top: {
-    color: "#fff",
-    marginTop: 100,
-    fontWeight: "bold",
-  },
-  bottom: {
-    flex: 1,
-    marginBottom: 200,
-  },
-  boldText: {
-    fontWeight: "bold",
-  },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: "cover",
-  },
-});
+

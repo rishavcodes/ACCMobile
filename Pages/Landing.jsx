@@ -18,12 +18,12 @@ export default function Landing() {
     <>
       <TopBar title="Search" />
 
-      <View style={styles.searchBar}>
+      <View style={landingStyles.searchBar}>
         <SearchBar />
       </View>
       <ScrollView>
-        <View style={styles.container}>
-          <View style={styles.top}>
+        <View style={landingStyles.container}>
+          <View style={landingStyles.top}>
             <TextInput
               label="Email*"
               value={text}
@@ -40,7 +40,7 @@ export default function Landing() {
             />
             <StyledButton variant="pinkBtn" text="Login" />
           </View>
-          <View style={styles.top}>
+          <View style={landingStyles.top}>
             <Text>Things to do: </Text>
             <Text>Filter beside search bar </Text>
             <Text>Side Hamborger bar </Text>
@@ -85,7 +85,7 @@ export default function Landing() {
             <Text>Home page </Text>
             <Text>Notifications </Text>
           </View>
-          <View style={styles.bottom}>
+          <View style={landingStyles.bottom}>
             <Text>Things to do: </Text>
             <Text>Filter beside search bar </Text>
             <Text>Side Hamborger bar </Text>
@@ -97,7 +97,7 @@ export default function Landing() {
         </View>
       </ScrollView>
 
-      <View style={styles.flexB}>
+      <View style={landingStyles.flexB}>
         <BottomBar />
       </View>
     </>

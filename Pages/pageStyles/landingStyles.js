@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native-web";
+import theme from "./theme";
 
 export default StyleSheet.create({
 
