@@ -6,6 +6,8 @@ import homepage from "../assets/onboarding1.svg";
 import { Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import StyledButton from "../Components/StyledButton";
+import theme from '../Pages/pageStyles/theme';
+
 
 export default function OnBoarding() {
   const navigation = useNavigation();

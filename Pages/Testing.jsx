@@ -10,6 +10,12 @@ import SearchBar from "../Components/SearchBar";
 import homepage from "../assets/homepage.png";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
+import theme from '../Pages/pageStyles/theme';
+
+
+
+
+
 export default function Testing() {
   const navigation = useNavigation();
   return (

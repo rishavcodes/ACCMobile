@@ -9,6 +9,8 @@ import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
+import landingStyles from '../Pages/pageStyles/landingStyles.js';
+
 
 export default function Landing() {
   const [text, setText] = React.useState("");
@@ -103,26 +105,5 @@ export default function Landing() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    alignItems: "center",
-  },
-  searchBar: {
-    backgroundColor: "white",
-    paddingHorizontal: 20,
-  },
-  flexB: {
-    flex: 1,
-  },
-  bottom: {
-    marginBottom: 200,
-  },
-  top: {
-    marginTop: 100,
-    alignItems: "center",
-    width: "100%",
-  },
-  boldText: {
-    fontWeight: "bold",
-  },
+  
 });

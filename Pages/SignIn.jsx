@@ -10,6 +10,10 @@ import SearchBar from "../Components/SearchBar";
 import homepage from "../assets/homepage.png";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
+import theme from '../Pages/pageStyles/theme';
+
+
+
 
 export default function SignIn() {
   const navigation = useNavigation();
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     fontSize: 36,
     textAlign: "center",
-    fontFamily: 'Roboto'
+    fontFamily: 'msBold'
   },
   header2: {
     marginTop: 20,
