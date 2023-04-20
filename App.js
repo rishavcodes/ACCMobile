@@ -42,6 +42,7 @@ export default function App() {
     if (!loaded) {
       return null;
     }
+    
   return (
     <PaperProvider>
       <NavigationContainer>

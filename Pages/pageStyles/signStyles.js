@@ -42,5 +42,4 @@ export default StyleSheet.create({
         flex: 1,
         resizeMode: "cover",
     },
-
 });
