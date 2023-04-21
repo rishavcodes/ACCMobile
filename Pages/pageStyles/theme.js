@@ -6,7 +6,4 @@ export default({
     blue: "blue",
     pink: "pink"
 
-
-
-    
 });
