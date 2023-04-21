@@ -14,8 +14,6 @@ import theme from '../Pages/pageStyles/theme';
 
 
 
-
-
 export default function Testing() {
   const navigation = useNavigation();
   return (

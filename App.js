@@ -37,11 +37,11 @@ export default function App() {
       msSemiBoldItalic: require('./assets/fonts/Montserrat-SemiBoldItalic.ttf'),
       msThin: require('./assets/fonts/Montserrat-Thin.ttf'),
       msThinItalic: require('./assets/fonts/Montserrat-ThinItalic.ttf'),
-
     });
     if (!loaded) {
       return null;
     }
+    
     
   return (
     <PaperProvider>

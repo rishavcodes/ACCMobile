@@ -4,7 +4,7 @@ import theme from "./theme";
 export default StyleSheet.create({
 
     container: {
-        backgroundColor: "white",
+        backgroundColor: theme.white,
         alignItems: "center",
     },
     searchBar: {
@@ -25,7 +25,4 @@ export default StyleSheet.create({
     boldText: {
         fontWeight: "bold",
     },
-
-
-
 });
