@@ -105,5 +105,5 @@ export default function Landing() {
 }
 
 const styles = StyleSheet.create({
-  
+
 });

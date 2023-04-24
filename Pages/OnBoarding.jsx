@@ -37,7 +37,6 @@ export default function OnBoarding(props) {
             </Text>
           </Button>
         </View>
-
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
 
