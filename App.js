@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
-import MyComponent from "./Components/MyComponent";
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { Button } from "react-native-paper";
 import BottomBar from "./Components/BottomBar";
 import TopBar from "./Components/TopBar";
@@ -13,12 +12,24 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Testing from "./Pages/Testing";
 import OnBoarding from "./Pages/OnBoarding";
 import SignIn from "./Pages/SignIn";
+import Login from "./Pages/Login";
+
 
 const Stack = createNativeStackNavigator();
 
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#F83E7D',
+    accent: '#f1c40f',
+  },
+};
+
 export default function App() {
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
@@ -27,6 +38,7 @@ export default function App() {
           <Stack.Screen name="onboarding" component={OnBoarding} />
           <Stack.Screen name="signin" component={SignIn} />
           <Stack.Screen name="landing" component={Landing} />
+          <Stack.Screen name="login" component={Login} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
-import MyComponent from "../Components/MyComponent";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
 import homepage from "../assets/homepage.png";
+import homepage2 from "../assets/homepage.png";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
 
 export default function SignIn() {
   const navigation = useNavigation();
+
   return (
     <>
-      <ImageBackground source={homepage} style={styles.backgroundImage}>
+      <ImageBackground source={ homepage} style={styles.backgroundImage}>
         <View style={styles.container}>
           <View style={styles.top}>
             <Text style={styles.header}>Aisha Comfortable Coliving</Text>
@@ -25,7 +26,7 @@ export default function SignIn() {
           </View>
 
           <View style={{ marginTop: 350 }}>
-            <StyledButton variant="pinkBtn" text="Sign In"/>
+            <StyledButton variant="pinkBtn" text="Sign In" link="login"/>
           </View>
           <View>
             <Text style={{ ...styles.header2, color: "#fff" }}>Don’t have an account?</Text>
@@ -65,7 +66,6 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     fontSize: 36,
     textAlign: "center",
-    fontFamily: 'Roboto'
   },
   header2: {
     marginTop: 20,

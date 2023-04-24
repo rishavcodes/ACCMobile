@@ -1,20 +1,37 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
+import homepage from "../assets/homepage.png";
+import homepage2 from "../assets/homepage.png";
 import StyledButton from "../Components/StyledButton";
+import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-paper";
+import { IconButton } from "react-native-paper";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-export default function Landing() {
+export default function Login() {
+  const navigation = useNavigation();
   const [text, setText] = useState("");
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
 
   return (
     <>
-      <TopBar title="Search" />
+      <View style={{paddingHorizontal: 20, paddingTop: 100, backgroundColor: "#0045F1", }}>
+        <IconButton icon={() => <Ionicons name="arrow-back" size={24} color="white" />} onPress={handleBackPress} />
+      </View>
+      <View style={{alignItems: "center", backgroundColor: "#0045F1",}}>
+        <Text style={styles.header}>Aisha Comfortable Coliving</Text>
+        <Text style={{ ...styles.header2, color: "#22293A" }}>Comfortable, Sustainable, and Community Oriented</Text>
+      </View>
+      <TopBar title="Login" />
 
       <View style={styles.searchBar}>
         <SearchBar />
@@ -94,10 +111,6 @@ export default function Landing() {
           </View>
         </View>
       </ScrollView>
-
-      <View style={styles.flexB}>
-        <BottomBar />
-      </View>
     </>
   );
 }
