@@ -8,7 +8,7 @@ import { StyleSheet } from "react-native";
 
 function StyledButton(props) {
   const navigation = useNavigation();
-  const { variant, link, text, content, textColor, onClick, noArrow, width, bgcolor, type } = props;
+  const { variant, link, text, content, textColor, onClick, noArrow, width, bgcolor, type, onPress } = props;
 
   const signupStyle = {
     minWidth: width ? width : "",
@@ -110,7 +110,7 @@ function StyledButton(props) {
       )} 
  */}
       {variant === "pinkBtn" && (
-        <Button mode="contained" buttonColor="#F83E7D" style={styles.signupStyle} onPress={() => navigation.navigate(link ? link : 'landing')}>
+        <Button mode="contained" buttonColor="#F83E7D" style={styles.signupStyle} onPress={() => navigation.navigate(link ? link : "login")}>
           <Text style={{color: "#fff", fontSize: 18}}>{text}</Text>
         </Button>
       )}

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
-import MyComponent from "../Components/MyComponent";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
@@ -13,7 +12,8 @@ import landingStyles from '../Pages/pageStyles/landingStyles.js';
 
 
 export default function Landing() {
-  const [text, setText] = React.useState("");
+  const [text, setText] = useState("");
+
   return (
     <>
       <TopBar title="Search" />
