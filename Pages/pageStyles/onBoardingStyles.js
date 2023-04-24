@@ -24,11 +24,14 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  text: {
+  regTxt: {
     textAlign: "right",
     paddingTop: 40,
     paddingRight: 40,
-    fontFamily: "msExtraBold",
+    fontFamily: theme.fontFamily2,
+  },
+  boldTxt: {
+    fontFamily: theme.fontFamily,
   },
   center: {
     flex: 1,

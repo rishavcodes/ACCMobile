@@ -7,6 +7,7 @@ import { Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import StyledButton from "../Components/StyledButton";
 import onBoardingStyles from "./pageStyles/onBoardingStyles.js";
+import theme from "./pageStyles/theme";
 
 export default function OnBoarding() {
   const navigation = useNavigation();
@@ -36,7 +37,7 @@ export default function OnBoarding() {
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
           <Text style={{ fontSize: 48, fontWeight: "bold", color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
-          <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
+          <Text style={onBoardingStyles.regTxt}>
             Aisha Comfortable Co-living provides the utmost safety and connection to all women.
           </Text>
         </View>
@@ -47,7 +48,7 @@ export default function OnBoarding() {
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
           <Text style={{ fontSize: 48, color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
-          <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
+          <Text style={theme.boldTxt}>
             Aisha Comfortable Co-living provides the utmost safety and connection to all women.
           </Text>
           <StyledButton variant="pinkBtn" text="" link="signin"/>
