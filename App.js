@@ -53,6 +53,7 @@ export default function App() {
           <Stack.Screen name="onboarding" component={OnBoarding} />
           <Stack.Screen name="signin" component={SignIn} />
           <Stack.Screen name="landing" component={Landing} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

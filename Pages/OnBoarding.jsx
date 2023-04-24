@@ -28,10 +28,8 @@ export default function OnBoarding() {
             </Text>
           </Button>
         </View>
-
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
-
           <Text style={{ fontSize: 48, fontWeight: "bold", color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
           <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
             Aisha Comfortable Co-living provides the utmost safety and connection to all women.
@@ -43,7 +41,6 @@ export default function OnBoarding() {
         <Text style={onBoardingStyles.text}>Page 2</Text>
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
-
           <Text style={{ fontSize: 48, fontWeight: "bold", color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
           <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
             Aisha Comfortable Co-living provides the utmost safety and connection to all women.
@@ -55,7 +52,6 @@ export default function OnBoarding() {
         <Text style={onBoardingStyles.text}>Page 3</Text>
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
-
           <Text style={{ fontSize: 48, fontWeight: "bold", color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
           <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
             Aisha Comfortable Co-living provides the utmost safety and connection to all women.
