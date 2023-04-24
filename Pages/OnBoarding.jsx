@@ -18,7 +18,11 @@ export default function OnBoarding(props) {
   const [checked, setChecked] = useState(false);
 
   return (
-    <Swiper style={onBoardingStyles.wrapper} showsButtons={false} loop={false} activeDot={<View style={onBoardingStyles.activeDot} />}>
+    <Swiper
+      style={onBoardingStyles.wrapper}
+      showsButtons={false}
+      loop={false}
+      activeDot={<View style={onBoardingStyles.activeDot} />}>
       {/* onBoarding Page 1 */}
       <View style={onBoardingStyles.slide1}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
@@ -43,9 +47,21 @@ export default function OnBoarding(props) {
           </Text>
         </View>
       </View>
+
       {/* onBoarding Page 2 */}
       <View style={onBoardingStyles.slide2}>
-        <Text style={onBoardingStyles.text}>Page 2</Text>
+        <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
+          <Button onPress={() => navigation.navigate("landing")}>
+            <Text
+              style={{
+                fontWeight: 400,
+                fontSize: 16,
+                textAlign: "center",
+              }}>
+              Skip
+            </Text>
+          </Button>
+        </View>
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
 
@@ -55,9 +71,21 @@ export default function OnBoarding(props) {
           </Text>
         </View>
       </View>
+
       {/* onBoarding Page 3 */}
       <View style={onBoardingStyles.slide3}>
-        <Text style={onBoardingStyles.text}>Page 3</Text>
+        <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
+          <Button onPress={() => navigation.navigate("landing")}>
+            <Text
+              style={{
+                fontWeight: 400,
+                fontSize: 16,
+                textAlign: "center",
+              }}>
+              Skip
+            </Text>
+          </Button>
+        </View>
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
 
@@ -70,7 +98,7 @@ export default function OnBoarding(props) {
             <IconButton
               icon={() => <Ionicons name="md-checkmark-circle" size={60} color={colors.primary} />}
               size={50}
-              onPress={() => navigation.navigate('signin')}
+              onPress={() => navigation.navigate("signin")}
             />
           </View>
         </View>
@@ -78,4 +106,3 @@ export default function OnBoarding(props) {
     </Swiper>
   );
 }
-

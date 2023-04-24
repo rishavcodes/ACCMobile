@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "./Components/BottomBar";
 import TopBar from "./Components/TopBar";
@@ -22,37 +22,37 @@ const theme = {
   roundness: 2,
   colors: {
     ...DefaultTheme.colors,
-    primary: '#F83E7D',
-    accent: '#f1c40f',
+    primary: "#F83E7D",
+    accent: "#f1c40f",
   },
 };
 
 export default function App() {
-    const [loaded] = useFonts({
-      msBlack: require('./assets/fonts/Montserrat-Black.ttf'),
-      msBlackItalic: require('./assets/fonts/Montserrat-BlackItalic.ttf'),
-      msBold: require('./assets/fonts/Montserrat-Bold.ttf'),
-      msBoldItalic: require('./assets/fonts/Montserrat-BoldItalic.ttf'),
-      msExtraBold: require('./assets/fonts/Montserrat-ExtraBold.ttf'),
-      msExtraBoldItalic: require('./assets/fonts/Montserrat-ExtraBoldItalic.ttf'),
-      msExtraLight: require('./assets/fonts/Montserrat-ExtraLight.ttf'),
-      msExtraLightItalic: require('./assets/fonts/Montserrat-LightItalic.ttf'),
-      msItalic: require('./assets/fonts/Montserrat-Italic.ttf'),
-      msLight: require('./assets/fonts/Montserrat-Light.ttf'),
-      msLightItalic: require('./assets/fonts/Montserrat-LightItalic.ttf'),
-      msMedium: require('./assets/fonts/Montserrat-Medium.ttf'),
-      msMediumItalic: require('./assets/fonts/Montserrat-MediumItalic.ttf'),
-      msRegular: require('./assets/fonts/Montserrat-Regular.ttf'),
-      msSemiBold: require('./assets/fonts/Montserrat-SemiBold.ttf'),
-      msSemiBoldItalic: require('./assets/fonts/Montserrat-SemiBoldItalic.ttf'),
-      msThin: require('./assets/fonts/Montserrat-Thin.ttf'),
-      msThinItalic: require('./assets/fonts/Montserrat-ThinItalic.ttf'),
-    });
-    if (!loaded) {
-      return null;
-    }
-    
-    
+  const [loaded] = useFonts({
+    msBlack: require("./assets/fonts/Montserrat-Black.ttf"),
+    msBlackItalic: require("./assets/fonts/Montserrat-BlackItalic.ttf"),
+    msBold: require("./assets/fonts/Montserrat-Bold.ttf"),
+    msBoldItalic: require("./assets/fonts/Montserrat-BoldItalic.ttf"),
+    msExtraBold: require("./assets/fonts/Montserrat-ExtraBold.ttf"),
+    msExtraBoldItalic: require("./assets/fonts/Montserrat-ExtraBoldItalic.ttf"),
+    msExtraLight: require("./assets/fonts/Montserrat-ExtraLight.ttf"),
+    msExtraLightItalic: require("./assets/fonts/Montserrat-LightItalic.ttf"),
+    msItalic: require("./assets/fonts/Montserrat-Italic.ttf"),
+    msLight: require("./assets/fonts/Montserrat-Light.ttf"),
+    msLightItalic: require("./assets/fonts/Montserrat-LightItalic.ttf"),
+    msMedium: require("./assets/fonts/Montserrat-Medium.ttf"),
+    msMediumItalic: require("./assets/fonts/Montserrat-MediumItalic.ttf"),
+    msRegular: require("./assets/fonts/Montserrat-Regular.ttf"),
+    msSemiBold: require("./assets/fonts/Montserrat-SemiBold.ttf"),
+    msSemiBoldItalic: require("./assets/fonts/Montserrat-SemiBoldItalic.ttf"),
+    msThin: require("./assets/fonts/Montserrat-Thin.ttf"),
+    msThinItalic: require("./assets/fonts/Montserrat-ThinItalic.ttf"),
+  });
+  if (!loaded) {
+    return null;
+  }
+
+  
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer>
