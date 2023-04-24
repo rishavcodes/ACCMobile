@@ -8,6 +8,8 @@ import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
+import landingStyles from '../Pages/pageStyles/landingStyles.js';
+
 
 export default function Landing() {
   const [text, setText] = useState("");
@@ -16,12 +18,12 @@ export default function Landing() {
     <>
       <TopBar title="Search" />
 
-      <View style={styles.searchBar}>
+      <View style={landingStyles.searchBar}>
         <SearchBar />
       </View>
       <ScrollView>
-        <View style={styles.container}>
-          <View style={styles.top}>
+        <View style={landingStyles.container}>
+          <View style={landingStyles.top}>
             <TextInput
               label="Email*"
               value={text}
@@ -38,7 +40,7 @@ export default function Landing() {
             />
             <StyledButton variant="pinkBtn" text="Login" />
           </View>
-          <View style={styles.top}>
+          <View style={landingStyles.top}>
             <Text>Things to do: </Text>
             <Text>Filter beside search bar </Text>
             <Text>Side Hamborger bar </Text>
@@ -83,7 +85,7 @@ export default function Landing() {
             <Text>Home page </Text>
             <Text>Notifications </Text>
           </View>
-          <View style={styles.bottom}>
+          <View style={landingStyles.bottom}>
             <Text>Things to do: </Text>
             <Text>Filter beside search bar </Text>
             <Text>Side Hamborger bar </Text>
@@ -95,7 +97,7 @@ export default function Landing() {
         </View>
       </ScrollView>
 
-      <View style={styles.flexB}>
+      <View style={landingStyles.flexB}>
         <BottomBar />
       </View>
     </>
@@ -103,26 +105,5 @@ export default function Landing() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "white",
-    alignItems: "center",
-  },
-  searchBar: {
-    backgroundColor: "white",
-    paddingHorizontal: 20,
-  },
-  flexB: {
-    flex: 1,
-  },
-  bottom: {
-    marginBottom: 200,
-  },
-  top: {
-    marginTop: 100,
-    alignItems: "center",
-    width: "100%",
-  },
-  boldText: {
-    fontWeight: "bold",
-  },
+  
 });

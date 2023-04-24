@@ -4,6 +4,8 @@ import ArrowForwardIcon from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet } from "react-native";
 
+
+
 function StyledButton(props) {
   const navigation = useNavigation();
   const { variant, link, text, content, textColor, onClick, noArrow, width, bgcolor, type, onPress } = props;
