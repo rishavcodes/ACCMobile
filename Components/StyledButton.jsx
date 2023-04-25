@@ -18,8 +18,7 @@ function StyledButton(props) {
     btnText: {
       color: textColor ? textColor : "#fff", 
       fontSize: 18,
-      fontFamily: "mslight",
-      fontWeight: "bold"
+      fontFamily: "msSemiBold",
     }
   });
 

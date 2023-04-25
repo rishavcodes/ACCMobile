@@ -51,7 +51,7 @@ export default function Register2() {
                 <ToggleButton
                   icon="format-align-left"
                   value="Tenant"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: 200 }}
                   size={100}
                 />
               </View>
@@ -59,7 +59,7 @@ export default function Register2() {
                 <ToggleButton
                   icon="format-align-left"
                   value="Woman Homeowner"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: 200 }}
                   size={100}
                 />
               </View>
@@ -69,7 +69,7 @@ export default function Register2() {
                 <ToggleButton
                   icon="format-align-left"
                   value="Property Owner"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: 200 }}
                   size={100}
                 />
               </View>
@@ -77,7 +77,7 @@ export default function Register2() {
                 <ToggleButton
                   icon="format-align-left"
                   value="Others"
-                  style={{ width: "100%", height: "100%" }}
+                  style={{ width: "100%", height: 200 }}
                   size={100}
                 />
               </View>
