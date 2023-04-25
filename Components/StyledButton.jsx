@@ -5,12 +5,25 @@ import { useNavigation } from '@react-navigation/native';
 import { StyleSheet } from "react-native";
 
 
-
 function StyledButton(props) {
   const navigation = useNavigation();
   const { variant, link, text, content, textColor, onClick, noArrow, width, bgcolor, type, onPress } = props;
 
-  const signupStyle = {
+  const styles = StyleSheet.create({
+    signupStyle: {
+      minWidth: 200,
+      padding: 10,
+      borderRadius: 100,
+    },
+    btnText: {
+      color: textColor ? textColor : "#fff", 
+      fontSize: 18,
+      fontFamily: "mslight",
+      fontWeight: "bold"
+    }
+  });
+
+  /* const signupStyle = {
     minWidth: width ? width : "",
     padding: 20,
     paddingLeft: 40,
@@ -54,7 +67,7 @@ function StyledButton(props) {
     backgroundColor: "transparent",
     textTransform: "none",
     color: textColor,
-  };
+  }; */
 
   return (
     <>
@@ -110,20 +123,14 @@ function StyledButton(props) {
       )} 
  */}
       {variant === "pinkBtn" && (
-        <Button mode="contained" buttonColor="#F83E7D" style={styles.signupStyle} onPress={() => navigation.navigate(link ? link : "login")}>
-          <Text style={{color: "#fff", fontSize: 18}}>{text}</Text>
+        <Button mode="contained" buttonColor="#F83E7D" style={styles.signupStyle} onPress={() => navigation.navigate(link ? link : "")}>
+          <Text style={styles.btnText}>{text}</Text>
         </Button>
       )}
     </>
   );
 }
 
-const styles = StyleSheet.create({
-  signupStyle: {
-    minWidth: 200,
-    padding: 10,
-    borderRadius: 100,
-  },
-});
+
 
 export default StyledButton;

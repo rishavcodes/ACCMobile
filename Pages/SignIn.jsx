@@ -27,11 +27,11 @@ export default function SignIn() {
           </View>
 
           <View style={{ marginTop: 350 }}>
-            <StyledButton variant="pinkBtn" text="Sign In" />
+            <StyledButton variant="pinkBtn" text="Sign In" link="login"/>
           </View>
           <View>
             <Text style={{ ...signStyles.header2, color: "#fff" }}>Don’t have an account?</Text>
-            <Button onPress={() => navigation.navigate("landing")}>
+            <Button onPress={() => navigation.navigate("register")}>
               <Text
                 style={{
                   fontWeight: 400,

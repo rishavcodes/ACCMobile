@@ -8,10 +8,10 @@ import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-paper";
 import { IconButton } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import themeStyles from "../Pages/pageStyles/theme.js";
+import theme from "./pageStyles/theme.js";
 import loginStyles from "./pageStyles/loginStyles";
 
-export default function Login() {
+export default function Register() {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,27 +31,36 @@ export default function Login() {
   return (
     <>
       <View>
-        <View style={{ paddingHorizontal: 20, paddingTop: 20, backgroundColor: "#0045F1" }}>
-          <IconButton icon={() => <Ionicons name="arrow-back" size={24} color="white" />} onPress={handleBackPress} />
+        <View style={{ paddingHorizontal: 20, paddingTop: 20, backgroundColor: "white" }}>
+          <IconButton icon={() => <Ionicons name="arrow-back" size={24} />} onPress={handleBackPress} />
         </View>
-        <View style={{ alignItems: "center", backgroundColor: "#0045F1", paddingTop: 100 }}>
+        <View style={{ alignItems: "center", backgroundColor: "white" }}>
           <Text
             style={{
-              ...themeStyles.header,
+              ...theme.header,
               paddingHorizontal: 20,
               paddingVertical: 20,
-              color: themeStyles.white,
               fontSize: 28,
+              color: "black",
               textAlign: "center",
             }}>
             Welcome back to Aisha Comfortable Coliving
           </Text>
+          <Text
+            style={{
+              paddingHorizontal: 20,
+              paddingVertical: 20,
+              fontSize: 28,
+              textAlign: "center",
+            }}>
+            We are so glad you’re here!
+          </Text>
         </View>
       </View>
-      <View style={themeStyles.page}>
-        <View style={{ backgroundColor: themeStyles.white, paddingTop: 50 }}>
+      <View style={theme.page}>
+        <View style={{ backgroundColor: theme.white }}>
           <Text style={{ paddingHorizontal: 20, paddingBottom: 20, paddingTop: 20, fontWeight: "bold", fontSize: 32 }}>
-            Sign in
+            Register
           </Text>
         </View>
 
@@ -61,47 +70,33 @@ export default function Login() {
               label="Email*"
               value={email}
               onChangeText={(email) => setEmail(email)}
-              style={{ backgroundColor: "#FFF", width: "100%" }}
+              style={theme.textField}
               required
             />
             <TextInput
-              label="Password*"
+              label="Confirm Email Address*"
               value={password}
               onChangeText={(password) => setPassword(password)}
-              style={{ backgroundColor: "#FFF", width: "100%" }}
+              style={theme.textField}
               required
             />
-          
+            <TextInput
+              label="Create Password*"
+              value={password}
+              onChangeText={(password) => setPassword(password)}
+              style={{ backgroundColor: "#FFF" , width: "100%"}}
+              required
+            />
+            <TextInput
+              label="Confirm Password*"
+              value={password}
+              onChangeText={(password) => setPassword(password)}
+              style={theme.textField}
+              required
+            />
+         
           <View style={{ paddingVertical: 20 }}>
-            <StyledButton variant="pinkBtn" text="Login" />
-          </View>
-
-          <View>
-            <Button onPress={() => navigation.navigate("forgotpassword")}>
-              <Text
-                style={{
-                  fontWeight: 400,
-                  fontSize: 20,
-                  textAlign: "center",
-                  textDecorationLine: "underline",
-                  paddingTop: 20,
-                }}>
-                Forgot password?
-              </Text>
-            </Button>
-            <Text style={{ ...themeStyles.header2 }}>Don’t have an account?</Text>
-
-            <Button onPress={() => navigation.navigate("register")}>
-              <Text
-                style={{
-                  fontWeight: 400,
-                  fontSize: 20,
-                  textAlign: "center",
-                  textDecorationLine: "underline",
-                }}>
-                Create Account
-              </Text>
-            </Button>
+            <StyledButton variant="pinkBtn" text="Next" link="register2"/>
           </View>
         </View>
       </View>

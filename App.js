@@ -14,18 +14,11 @@ import OnBoarding from "./Pages/OnBoarding";
 import SignIn from "./Pages/SignIn";
 import Login from "./Pages/Login";
 import { useFonts } from "expo-font";
-
+import ForgetPassword from "./Pages/ForgotPassword";
+import Register from "./Pages/Register";
+import Register2 from "./Pages/Register2";
+import Register3 from "./Pages/Register3";
 const Stack = createNativeStackNavigator();
-
-const theme = {
-  ...DefaultTheme,
-  roundness: 2,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: "#F83E7D",
-    accent: "#f1c40f",
-  },
-};
 
 export default function App() {
   const [loaded] = useFonts({
@@ -52,7 +45,26 @@ export default function App() {
     return null;
   }
 
-  
+  const theme = {
+    ...DefaultTheme,
+    roundness: 2,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: "#F83E7D",
+      accent: "#f1c40f",
+    },
+    fonts: {
+      ...DefaultTheme.fonts,
+      h1: {
+        fontFamily: "msLight",
+      },
+      h2: {
+        fontFamily: "Montserrat-Regular",
+        fontWeight: "normal",
+      },
+    },
+  };
+
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer>
@@ -61,6 +73,13 @@ export default function App() {
             headerShown: false,
           }}>
           <Stack.Screen name="onboarding" component={OnBoarding} />
+          
+          <Stack.Screen name="register" component={Register} />
+          <Stack.Screen name="register2" component={Register2} />
+          <Stack.Screen name="register3" component={Register3} />
+
+          <Stack.Screen name="forgotpassword" component={ForgetPassword} />
+
           <Stack.Screen name="signin" component={SignIn} />
           <Stack.Screen name="landing" component={Landing} />
           <Stack.Screen name="login" component={Login} />

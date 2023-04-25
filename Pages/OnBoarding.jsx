@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Swiper from "react-native-swiper/src";
 import { Image } from "react-native";
 import homepage from "../assets/onboarding1.svg";
@@ -8,6 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 import StyledButton from "../Components/StyledButton";
 import { Checkbox } from "react-native-paper";
 import { IconButton } from "react-native-paper";
+import { Text } from "react-native-paper";
 import { useTheme } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import onBoardingStyles from "./pageStyles/onBoardingStyles.js";
@@ -26,7 +27,7 @@ export default function OnBoarding(props) {
       {/* onBoarding Page 1 */}
       <View style={onBoardingStyles.slide1}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
-          <Button onPress={() => navigation.navigate("landing")}>
+          <Button onPress={() => navigation.navigate("login")}>
             <Text
               style={{
                 fontWeight: 400,
@@ -37,6 +38,7 @@ export default function OnBoarding(props) {
             </Text>
           </Button>
         </View>
+
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
 
@@ -50,7 +52,7 @@ export default function OnBoarding(props) {
       {/* onBoarding Page 2 */}
       <View style={onBoardingStyles.slide2}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
-          <Button onPress={() => navigation.navigate("landing")}>
+          <Button onPress={() => navigation.navigate("login")}>
             <Text
               style={{
                 fontWeight: 400,
@@ -74,7 +76,7 @@ export default function OnBoarding(props) {
       {/* onBoarding Page 3 */}
       <View style={onBoardingStyles.slide3}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
-          <Button onPress={() => navigation.navigate("landing")}>
+          <Button onPress={() => navigation.navigate("login")}>
             <Text
               style={{
                 fontWeight: 400,
