@@ -12,6 +12,7 @@ import { Text } from "react-native-paper";
 import { useTheme } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import onBoardingStyles from "./pageStyles/onBoardingStyles.js";
+import theme from "./pageStyles/theme";
 
 export default function OnBoarding(props) {
   const { colors } = useTheme();
@@ -65,10 +66,9 @@ export default function OnBoarding(props) {
         </View>
         <View style={onBoardingStyles.center}>
           <Image source={homepage} style={{ width: 200, height: 200 }} />
-
-          <Text style={{ fontSize: 48, fontWeight: "bold", color: "#0045F1", paddingTop: 30 }}>Women</Text>
-          <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
-            We support women throughout their entire Coliving experience through out personalized housing services.
+          <Text style={{ fontSize: 48, fontWeight: "bold", color: "#F83E7D", paddingTop: 30 }}>Match.</Text>
+          <Text style={onBoardingStyles.regTxt}>
+            Aisha Comfortable Co-living provides the utmost safety and connection to all women.
           </Text>
         </View>
       </View>
@@ -91,7 +91,7 @@ export default function OnBoarding(props) {
           <Image source={homepage} style={{ width: 200, height: 200 }} />
 
           <Text style={{ fontSize: 48, fontWeight: "bold", color: colors.primary, paddingTop: 30 }}>Community</Text>
-          <Text style={{ fontSize: 18, color: "#323232", textAlign: "center", paddingTop: 20 }}>
+          <Text style={theme.boldTxt}>
             The Aisha Community is a place where women can connect, network, and build friendships through our online
             and in-person events.
           </Text>
