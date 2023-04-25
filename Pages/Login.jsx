@@ -75,7 +75,7 @@ export default function Login() {
           <View style={{ paddingVertical: 20 }}>
             <StyledButton variant="pinkBtn" text="Login" />
           </View>
-
+          
           <View>
             <Button onPress={() => navigation.navigate("forgotpassword")}>
               <Text
