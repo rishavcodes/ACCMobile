@@ -14,11 +14,13 @@ function StyledButton(props) {
       minWidth: 200,
       padding: 10,
       borderRadius: 100,
+      backgroundColor: bgcolor ? bgcolor : '#F83E7D'
     },
     btnText: {
       color: textColor ? textColor : "#fff", 
       fontSize: 18,
       fontFamily: "msSemiBold",
+      
     }
   });
 

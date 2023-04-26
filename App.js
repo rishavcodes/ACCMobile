@@ -72,8 +72,9 @@ export default function App() {
           screenOptions={{
             headerShown: false,
           }}>
+          <Stack.Screen name="testing" component={Testing} />
           <Stack.Screen name="onboarding" component={OnBoarding} />
-          
+
           <Stack.Screen name="register" component={Register} />
           <Stack.Screen name="register2" component={Register2} />
           <Stack.Screen name="register3" component={Register3} />

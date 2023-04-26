@@ -9,23 +9,22 @@ import SearchBar from "../Components/SearchBar";
 import homepage from "../assets/homepage.png";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
-import theme from '../Pages/pageStyles/theme';
-
-
+import theme from "../Pages/pageStyles/theme";
+import ECard from "../Components/ECard";
 
 export default function Testing() {
   const navigation = useNavigation();
   return (
     <>
-      <ImageBackground source={homepage} style={styles.backgroundImage}>
+      <ScrollView>
         <View style={styles.container}>
           <View style={styles.top}>
-            <Text style={styles.header}>Aisha Comfortable Coliving</Text>
-            <Text style={{ ...styles.header2, color: "#22293A" }}>
-              Comfortable, Sustainable, and Community Oriented
-            </Text>
+            <Text style={{ ...styles.header2, color: "#22293A" }}>Testing</Text>
           </View>
-
+          <View style={styles.cardContainer}>
+            <ECard variant="housemate"></ECard>
+          </View>
+          <ECard variant="listing"></ECard>
           <View style={{ marginTop: 350 }}>
             <StyledButton variant="pinkBtn" text="Sign In"></StyledButton>
           </View>
@@ -45,16 +44,20 @@ export default function Testing() {
             </Button>
           </View>
         </View>
-      </ImageBackground>
+      </ScrollView>
     </>
   );
 }
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    paddingVertical: 40,
+  },
   container: {
     flex: 1,
     alignItems: "center",
     paddingHorizontal: 20,
+    backgroundColor: "white",
   },
   searchBar: {
     paddingHorizontal: 20,
