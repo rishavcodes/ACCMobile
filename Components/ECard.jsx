@@ -4,6 +4,7 @@ import { Card, IconButton, Title, Paragraph, Checkbox, Avatar, Button } from "re
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import ECardHouseMateStyle from "./componentStyles.js/ECardHouseMateStyle";
 import ECardListingStyle from "./componentStyles.js/ECardListingStyle";
+import ECardEventStyle from "./componentStyles.js/ECardEventStyle";
 import StyledButton from "./StyledButton";
 
 function capitalizeFirstLetter(str) {
@@ -94,6 +95,41 @@ function ECard(props) {
                 onPress={() => console.log("Arrow pressed")}
                 style={ECardListingStyle.iconButton}
               />
+            </View>
+          </Card.Content>
+        </Card>
+      )}
+      {variant === "event" && (
+        <Card style={ECardEventStyle.card} elevation={5}>
+          <Card.Cover style={ECardEventStyle.cardCover} source={image} />
+          <View style={ECardEventStyle.buttonContainer}>
+            <StyledButton variant="pinkBtn" text={price} />
+          </View>
+          <Card.Content >
+            <View style={ECardEventStyle.cardContent}>
+              <View style={ECardEventStyle.locationContainer}>
+                <MaterialCommunityIcons name="map-marker" color="#F83E7D" size={24} />
+                <Title style={ECardEventStyle.location}>{location}</Title>
+              </View>
+              <Title style={ECardEventStyle.boldText}>Trivia Night IRL</Title>
+              <View style={ECardEventStyle.grid}>
+                <Paragraph style={ECardEventStyle.gridItem}>{bedrooms} Interested</Paragraph>
+                <Paragraph style={ECardEventStyle.gridItem}>{bathrooms} Going</Paragraph>
+                <Paragraph style={ECardEventStyle.gridItem}>{roomsAvailable} Spots Available</Paragraph>
+              </View>
+              <View style={ECardEventStyle.row}>
+                <View style={ECardEventStyle.verified}>
+                  <MaterialCommunityIcons name="check-circle" color="#F83E7D" size={24} />
+                  <Paragraph style={ECardEventStyle.verifiedText}>Verified</Paragraph>
+                </View>
+                <IconButton
+                  icon="arrow-right"
+                  color="black"
+                  size={30}
+                  onPress={() => console.log("Arrow pressed")}
+                  style={ECardEventStyle.iconButton}
+                />
+              </View>
             </View>
           </Card.Content>
         </Card>

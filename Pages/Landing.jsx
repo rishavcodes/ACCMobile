@@ -49,42 +49,7 @@ export default function Landing() {
             <Text>Home page </Text>
             <Text>Notifications </Text>
           </View>
-          <View>
-            <Text>Things to do: </Text>
-            <Text>Filter beside search bar </Text>
-            <Text>Side Hamborger bar </Text>
-            <Text>Toggle button </Text>
-            <Text>Cards </Text>
-            <Text>Home page </Text>
-            <Text>Notifications </Text>
-          </View>
-          <View>
-            <Text>Things to do: </Text>
-            <Text>Filter beside search bar </Text>
-            <Text>Side Hamborger bar </Text>
-            <Text>Toggle button </Text>
-            <Text>Cards </Text>
-            <Text>Home page </Text>
-            <Text>Notifications </Text>
-          </View>
-          <View>
-            <Text>Things to do: </Text>
-            <Text>Filter beside search bar </Text>
-            <Text>Side Hamborger bar </Text>
-            <Text>Toggle button </Text>
-            <Text>Cards </Text>
-            <Text>Home page </Text>
-            <Text>Notifications </Text>
-          </View>
-          <View>
-            <Text>Things to do: </Text>
-            <Text>Filter beside search bar </Text>
-            <Text>Side Hamborger bar </Text>
-            <Text>Toggle button </Text>
-            <Text>Cards </Text>
-            <Text>Home page </Text>
-            <Text>Notifications </Text>
-          </View>
+          
           <View style={landingStyles.bottom}>
             <Text>Things to do: </Text>
             <Text>Filter beside search bar </Text>
@@ -104,6 +69,3 @@ export default function Landing() {
   );
 }
 
-const styles = StyleSheet.create({
-
-});

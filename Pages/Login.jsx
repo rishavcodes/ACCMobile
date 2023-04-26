@@ -73,7 +73,7 @@ export default function Login() {
             />
           
           <View style={{ paddingVertical: 20 }}>
-            <StyledButton variant="pinkBtn" text="Login" link="testing"/>
+            <StyledButton variant="pinkBtn" text="Login" link="navmanager"/>
           </View>
           
           <View>

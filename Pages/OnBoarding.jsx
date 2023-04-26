@@ -28,7 +28,7 @@ export default function OnBoarding(props) {
       {/* onBoarding Page 1 */}
       <View style={onBoardingStyles.slide1}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
-          <Button onPress={() => navigation.navigate("login")}>
+          <Button onPress={() => navigation.navigate("signin")}>
             <Text
               style={{
                 fontWeight: 400,
@@ -53,7 +53,7 @@ export default function OnBoarding(props) {
       {/* onBoarding Page 2 */}
       <View style={onBoardingStyles.slide2}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
-          <Button onPress={() => navigation.navigate("login")}>
+          <Button onPress={() => navigation.navigate("signin")}>
             <Text
               style={{
                 fontWeight: 400,
@@ -76,7 +76,7 @@ export default function OnBoarding(props) {
       {/* onBoarding Page 3 */}
       <View style={onBoardingStyles.slide3}>
         <View style={{ justifyContent: "flex-end", alignItems: "flex-end", paddingTop: 40, paddingRight: 20 }}>
-          <Button onPress={() => navigation.navigate("login")}>
+          <Button onPress={() => navigation.navigate("signin")}>
             <Text
               style={{
                 fontWeight: 400,

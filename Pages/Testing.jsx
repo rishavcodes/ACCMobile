@@ -11,41 +11,32 @@ import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
 import theme from "../Pages/pageStyles/theme";
 import ECard from "../Components/ECard";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Testing() {
   const navigation = useNavigation();
   return (
-    <>
-      <ScrollView>
-        <View style={styles.container}>
-          <View style={styles.top}>
-            <Text style={{ ...styles.header2, color: "#22293A" }}>Testing</Text>
-          </View>
-          <View style={styles.cardContainer}>
-            <ECard variant="housemate"></ECard>
-          </View>
-          <ECard variant="listing"></ECard>
-          <View style={{ marginTop: 350 }}>
-            <StyledButton variant="pinkBtn" text="Sign In"></StyledButton>
-          </View>
-          <View>
-            <Text style={{ ...styles.header2, color: "#fff" }}>Don’t have an account?</Text>
-            <Button onPress={() => navigation.navigate("landing")}>
-              <Text
-                style={{
-                  fontWeight: 400,
-                  fontSize: 20,
-                  textAlign: "center",
-                  color: "#fff",
-                  textDecorationLine: "underline",
-                }}>
-                Create Account
-              </Text>
-            </Button>
-          </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.top}>
+          <Text style={{ ...styles.header2, color: "#22293A" }}>Testing</Text>
         </View>
-      </ScrollView>
-    </>
+        <View style={styles.cardContainer}>
+          <ECard variant="housemate"></ECard>
+        </View>
+        <View style={styles.cardContainer}>
+          <ECard variant="listing"></ECard>
+        </View>
+        <View style={styles.cardContainer}>
+          <ECard variant="event"></ECard>
+        </View>
+
+        <View style={{ marginBottom: 50 }}>
+          <StyledButton variant="pinkBtn" text="Return Onboarding" link="onboarding"></StyledButton>
+        </View>
+        
+      </View>
+    </ScrollView>
   );
 }
 

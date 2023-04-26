@@ -18,6 +18,12 @@ import ForgetPassword from "./Pages/ForgotPassword";
 import Register from "./Pages/Register";
 import Register2 from "./Pages/Register2";
 import Register3 from "./Pages/Register3";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import NavManager from "./Navigators/DefaultNavManager";
+
+const Drawer = createDrawerNavigator();
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -72,8 +78,10 @@ export default function App() {
           screenOptions={{
             headerShown: false,
           }}>
-          <Stack.Screen name="testing" component={Testing} />
           <Stack.Screen name="onboarding" component={OnBoarding} />
+          <Stack.Screen name="navmanager" component={NavManager} />
+          <Stack.Screen name="testing" component={Testing} />
+          
 
           <Stack.Screen name="register" component={Register} />
           <Stack.Screen name="register2" component={Register2} />
@@ -82,8 +90,9 @@ export default function App() {
           <Stack.Screen name="forgotpassword" component={ForgetPassword} />
 
           <Stack.Screen name="signin" component={SignIn} />
-          <Stack.Screen name="landing" component={Landing} />
+
           <Stack.Screen name="login" component={Login} />
+          <Stack.Screen name="landing" component={Landing} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
