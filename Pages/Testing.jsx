@@ -18,8 +18,13 @@ export default function Testing() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={styles.top}>
-          <Text style={{ ...styles.header2, color: "#22293A" }}>Testing</Text>
+        <Text style={{ ...styles.header2, color: "#22293A" }}>Testing</Text>
+
+        <View style={styles.cardContainer}>
+          <ECard variant="eventMini"></ECard>
+          <ECard variant="eventMini"></ECard>
+          <ECard variant="eventMini"></ECard>
+          <ECard variant="eventMini"></ECard>
         </View>
         <View style={styles.cardContainer}>
           <ECard variant="housemate"></ECard>
@@ -34,7 +39,6 @@ export default function Testing() {
         <View style={{ marginBottom: 50 }}>
           <StyledButton variant="pinkBtn" text="Return Onboarding" link="onboarding"></StyledButton>
         </View>
-        
       </View>
     </ScrollView>
   );
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     backgroundColor: "white",
-    paddingBottom: theme.bottomBarHeight
+    paddingBottom: theme.bottomBarHeight,
   },
   searchBar: {
     paddingHorizontal: 20,

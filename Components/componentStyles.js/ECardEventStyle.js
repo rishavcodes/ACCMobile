@@ -3,7 +3,11 @@ import { StyleSheet } from "react-native-web";
 export default StyleSheet.create({
   card: {
     borderRadius: 25,
-    width: 367,
+    width: 314,
+    backgroundColor: "white",
+  },
+  cardMini: {
+    width: 400,
     backgroundColor: "white",
   },
   cardCover: {
@@ -11,7 +15,7 @@ export default StyleSheet.create({
     borderTopRightRadius: 25,
   },
   cardContent: {
-    marginHorizontal: 15
+    marginHorizontal: 20,
   },
   buttonContainer: {
     alignItems: "flex-end",
@@ -29,6 +33,7 @@ export default StyleSheet.create({
   location: {
     fontWeight: "bold",
     color: "#F83E7D",
+    fontSize: 12
   },
   boldText: {
     fontWeight: "bold",
