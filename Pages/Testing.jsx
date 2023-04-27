@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     backgroundColor: "white",
+    paddingBottom: theme.bottomBarHeight
   },
   searchBar: {
     paddingHorizontal: 20,

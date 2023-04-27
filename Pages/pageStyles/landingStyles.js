@@ -5,6 +5,7 @@ export default StyleSheet.create({
   container: {
     backgroundColor: theme.white,
     alignItems: "center",
+    justifyContent: "center",
     flex: 1,
   },
   searchBar: {

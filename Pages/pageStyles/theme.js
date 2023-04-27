@@ -26,4 +26,5 @@ export default {
     backgroundColor: "#FFF",
     width: "100%",
   },
+  bottomBarHeight: 100,
 };

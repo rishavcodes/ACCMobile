@@ -6,7 +6,7 @@ import { Button } from "react-native-paper";
 import BottomBar from "./Components/BottomBar";
 import TopBar from "./Components/TopBar";
 import SearchBar from "./Components/SearchBar";
-import Landing from "./Pages/Landing";
+import Landing from "./Pages/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Testing from "./Pages/Testing";
@@ -20,7 +20,8 @@ import Register2 from "./Pages/Register2";
 import Register3 from "./Pages/Register3";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import NavManager from "./Navigators/DefaultNavManager";
+import NavManager from "./Navigators/DrawerManager";
+import DrawerManager from "./Navigators/DrawerManager";
 
 const Drawer = createDrawerNavigator();
 
@@ -79,20 +80,13 @@ export default function App() {
             headerShown: false,
           }}>
           <Stack.Screen name="onboarding" component={OnBoarding} />
-          <Stack.Screen name="navmanager" component={NavManager} />
-          <Stack.Screen name="testing" component={Testing} />
-          
-
+          <Stack.Screen name="signin" component={SignIn} />
+          <Stack.Screen name="login" component={Login} />
           <Stack.Screen name="register" component={Register} />
           <Stack.Screen name="register2" component={Register2} />
           <Stack.Screen name="register3" component={Register3} />
-
-          <Stack.Screen name="forgotpassword" component={ForgetPassword} />
-
-          <Stack.Screen name="signin" component={SignIn} />
-
-          <Stack.Screen name="login" component={Login} />
-          <Stack.Screen name="landing" component={Landing} />
+          <Drawer.Screen name="forgotpassword" component={ForgetPassword} />
+          <Stack.Screen name="drawermanager" component={DrawerManager} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
