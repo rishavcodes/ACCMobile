@@ -19,8 +19,8 @@ const Drawer = createDrawerNavigator();
 export default function DrawerManager() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
-      <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />}>
-        <Drawer.Screen name="tabmanager" component={TabManager} options={{ title: "Home" }} />
+      <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} /> } screenOptions={{drawerPosition:"right"}}>
+        <Drawer.Screen name="tabmanager" component={TabManager} options={{ title: "ACC" }} />
       </Drawer.Navigator>
     </SafeAreaView>
   );

@@ -7,6 +7,7 @@ export default {
     paddingHorizontal: 20,
     backgroundColor: "#fff",
     flex: 1,
+    paddingBottom: 100,
   },
   header: {
     color: "#fff",
