@@ -3,6 +3,7 @@ export default {
   H1: 32,
   blue: "blue",
   pink: "pink",
+  msBold: "msBold",
   page: {
     paddingHorizontal: 20,
     backgroundColor: "#fff",

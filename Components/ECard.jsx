@@ -6,6 +6,7 @@ import ECardHouseMateStyle from "./componentStyles.js/ECardHouseMateStyle";
 import ECardListingStyle from "./componentStyles.js/ECardListingStyle";
 import ECardEventStyle from "./componentStyles.js/ECardEventStyle";
 import StyledButton from "./StyledButton";
+import theme from "../Pages/pageStyles/theme";
 
 function capitalizeFirstLetter(str) {
   if (str) {
@@ -140,7 +141,7 @@ function ECard(props) {
             <View style={{ backgroundColor: "gray", height: 140, width: "35%" }}></View>
 
             <View style={ECardEventStyle.cardContent}>
-              <Title style={ECardEventStyle.boldText}>Trivia Night IRL</Title>
+              <Title style={{fontFamily: "msBold"}}>Trivia Night IRL</Title>
               <View style={ECardEventStyle.locationContainer}>
                 <MaterialCommunityIcons name="map-marker" color="#F83E7D" size={15} />
                 <Title style={ECardEventStyle.location}>{location}</Title>

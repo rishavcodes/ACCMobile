@@ -33,10 +33,10 @@ export default StyleSheet.create({
   location: {
     fontWeight: "bold",
     color: "#F83E7D",
-    fontSize: 12
+    fontSize: 12,
   },
   boldText: {
-    fontWeight: "bold",
+    fontFamily: "msBold",
   },
   grid: {
     flexDirection: "row",
