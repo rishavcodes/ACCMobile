@@ -24,14 +24,15 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  regTxt: {
-    textAlign: "right",
-    paddingTop: 40,
-    paddingRight: 40,
-    fontFamily: theme.fontFamily2,
+  text:{
+    textAlign: "center",
+    fontFamily: theme.fonts.regular,
+    color: "black",
+    marginBottom: 30,
   },
-  boldTxt: {
-    fontFamily: theme.fontFamily,
+  headerTxt: {
+    fontSize: theme.fontSizes.h1,
+    fontFamily: theme.fonts.bold,
   },
   center: {
     flex: 1,
@@ -39,4 +40,13 @@ export default StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 40,
   },
+  blue:{
+    color: theme.textColors.blue,
+  },
+  pink:{
+    color: theme.textColors.pink,
+  },
+  imgWrap:{
+    marginBottom: 50,
+  }
 });

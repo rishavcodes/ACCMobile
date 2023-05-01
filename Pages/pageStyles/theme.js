@@ -1,9 +1,19 @@
 export default {
-  white: "#fff",
-  H1: 32,
-  blue: "blue",
-  pink: "pink",
-  msBold: "msBold",
+  textColors:{
+    blue: "#0045F1",
+    pink: "#F83E7D",
+  },
+  fontSizes:{
+    h1: 48,
+  },
+  fonts:{
+    bold: "msBold",
+    regular: "msRegular",
+    sBold: "msSemiBold",
+    light: "msLight",
+    medium: "msMedium",
+    thin: "msThin",
+  },
   page: {
     paddingHorizontal: 20,
     backgroundColor: "#fff",
