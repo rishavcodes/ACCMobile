@@ -19,12 +19,18 @@ export default function OnBoarding(props) {
   const { colors } = useTheme();
   const navigation = useNavigation();
 
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeDotColors = [ "#F83E7D", "#0045F1", "#F83E7D",];
+
+
   return (
     <Swiper
       style={onBoardingStyles.wrapper}
       showsButtons={false}
       loop={false}
-      activeDot={<View style={onBoardingStyles.activeDot} />}
+      activeDotColor={activeDotColors[activeIndex]}
+      onIndexChanged={(index) => setActiveIndex(index)}
     >
       {/* onBoarding Page 1 */}
       <View style={onBoardingStyles.slide1}>
@@ -46,7 +52,7 @@ export default function OnBoarding(props) {
             <Image source={ob1} />
           </View>
           <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.pink]}>
-            Coliving
+            Coliving 
           </Text>
           <Text style={onBoardingStyles.text}>
             Coliving is the newest form of wellness living, where two or more
@@ -75,7 +81,7 @@ export default function OnBoarding(props) {
             <Image source={ob2} />
           </View>
           <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.blue]}>
-            Women
+            Women 
           </Text>
           <Text style={onBoardingStyles.text}>
             We support women throughout their entire Coliving experience through
@@ -111,7 +117,6 @@ export default function OnBoarding(props) {
               The Aisha Community is a place where women can connect, network,
               and build friendships through our online and in-person events.
             </Text>
-
             <IconButton
               icon={() => (
                 <Ionicons

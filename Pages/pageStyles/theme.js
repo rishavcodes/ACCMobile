@@ -1,5 +1,5 @@
 export default {
-  textColors:{
+  Colors:{
     blue: "#0045F1",
     pink: "#F83E7D",
   },
