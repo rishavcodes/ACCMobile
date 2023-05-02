@@ -121,11 +121,11 @@ export default function OnBoarding(props) {
               icon={() => (
                 <Ionicons
                   name="md-checkmark-circle"
-                  size={60}
+                  size={40}
                   color={colors.primary}
                 />
               )}
-              size={50}
+              size={30}
               onPress={() => navigation.navigate("signin")}
             />
           </View>

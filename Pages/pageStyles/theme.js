@@ -1,12 +1,12 @@
 export default {
-  Colors:{
+  Colors: {
     blue: "#0045F1",
     pink: "#F83E7D",
   },
-  fontSizes:{
-    h1: 48,
+  fontSizes: {
+    h1: 30,
   },
-  fonts:{
+  fonts: {
     bold: "msBold",
     regular: "msRegular",
     sBold: "msSemiBold",
