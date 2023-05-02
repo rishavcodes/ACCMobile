@@ -8,8 +8,9 @@ import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-paper";
 import { IconButton } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import landingStyles from "./pageStyles/landingStyles.js";
-import theme from "./pageStyles/theme.js";
+import landingStyles from "../Styles/Pages/landingStyles.js";
+import theme from "../Styles/theme.js";
+import SignInHeader from "../Components/SignInHeader";
 
 export default function ForgetPassword() {
   const navigation = useNavigation();
@@ -31,17 +32,9 @@ export default function ForgetPassword() {
 
   return (
     <>
-      <View>
-        <View style={{ paddingHorizontal: 20, paddingTop: 20, backgroundColor: "white" }}>
-          <IconButton icon={() => <Ionicons name="arrow-back" size={24} />} onPress={handleBackPress} />
-        </View>
-      </View>
-      <View style={theme.page}>
-        <View style={{ backgroundColor: theme.white, paddingTop: 50 }}>
-          <Text style={{ paddingHorizontal: 20, paddingBottom: 20, paddingTop: 20, fontWeight: "bold", fontSize: 32 }}>
-            Forgot Password
-          </Text>
-        </View>
+      <SignInHeader title={"Forgot Password"}/>
+      <View style={{...theme.page,paddingTop:0,paddingBottom:200,marginTop:0}}>
+
         <View style={landingStyles.container}>
           <TextInput
             label="Email*"
@@ -71,8 +64,8 @@ export default function ForgetPassword() {
             style={theme.textField}
             required
           />
-          <View style={{ paddingVertical: 20 }}>
-            <StyledButton variant="pinkBtn" text="Reset Password" />
+          <View style={{ paddingVertical: 30 }}>
+            <StyledButton variant="contained"  outerStyle={{backgroundColor:"#0045F1"}} text="Reset Password" />
           </View>
         </View>
       </View>

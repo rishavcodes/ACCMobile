@@ -8,7 +8,7 @@ import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
-import landingStyles from "./pageStyles/landingStyles.js";
+import landingStyles from "../Styles/Pages/landingStyles.js";
 
 export default function RentalListingForm() {
   const [text, setText] = useState("");

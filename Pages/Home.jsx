@@ -8,16 +8,17 @@ import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
-import landingStyles from "./pageStyles/landingStyles.js";
+import landingStyles from "../Styles/Pages/landingStyles.js";
 import { TouchableOpacity } from "react-native";
-import theme from "./pageStyles/theme";
+import theme from "../Styles/theme";
 
 export default function Home() {
   const [text, setText] = useState("");
 
   return (
     <ScrollView>
-      <View style={theme.page}>
+      {/* Note assuming this will be entire page changed hense why inline css hasn't changed  */}
+      <View style={theme.page}> 
         <View style={{ paddingVertical: 10, alignItems: "center", backgroundColor: "#fff", flex: 1 }}>
           <View style={{ backgroundColor: "gray", height: 140, width: "100%", borderRadius: 10 }}></View>
         </View>

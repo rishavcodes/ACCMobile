@@ -3,32 +3,28 @@ import { Button, Text, } from "react-native-paper";
 import ArrowForwardIcon from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet } from "react-native";
-
-
+import SButtonStyle from "../Styles/Components/SButtonStyle";
 function StyledButton(props) {
-  const navigation = useNavigation();
-  const { variant, link, text, content, textColor, onClick, noArrow, width, bgcolor, type, onPress } = props;
+  const { variant, link, text, onPress, outerStyle, labelStyle } = props;
+  const navigation = link?useNavigation():null 
 
-  const styles = StyleSheet.create({
-    signupStyle: {
-      minWidth: 200,
-      padding: 10,
-      borderRadius: 100,
-      backgroundColor: bgcolor ? bgcolor : '#F83E7D'
-    },
-    btnText: {
-      color: textColor ? textColor : "#fff", 
-      fontSize: 18,
-      fontFamily: "msSemiBold",
-      
-    }
-  });
+  const pressed = () => {
+    if(link)navigation.navigate(link)
+    if(onPress) onPress()
+  };
 
   return (
     <>
-      {variant === "pinkBtn" && (
-        <Button mode="contained" buttonColor="#F83E7D" style={styles.signupStyle} onPress={() => navigation.navigate(link ? link : "")}>
-          <Text style={styles.btnText}>{text}</Text>
+      {variant === "contained" && (
+        <Button mode="contained" style={{...SButtonStyle.contained,...outerStyle}} 
+          labelStyle={{...SButtonStyle.containedText,...labelStyle}} onPress={pressed}>
+          {text}
+        </Button>
+      )}
+      {variant === "text" && (
+        <Button mode="text" style={{...outerStyle}} 
+          labelStyle={{...SButtonStyle.plainText,...labelStyle}} onPress={pressed}>
+          {text}
         </Button>
       )}
     </>

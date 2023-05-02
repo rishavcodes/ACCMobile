@@ -9,11 +9,12 @@ import { IconButton } from "react-native-paper";
 import { Text } from "react-native-paper";
 import { useTheme } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import onBoardingStyles from "./pageStyles/onBoardingStyles.js";
-import theme from "./pageStyles/theme";
+import onBoardingStyles from "../Styles/Pages/onBoardingStyles.js";
+import theme from "../Styles/theme";
 import ob1 from "../assets/images/onboardingImg1.png";
 import ob2 from "../assets/images/onboardingImg2.png";
 import ob3 from "../assets/images/onboardingImg3.png";
+
 
 export default function OnBoarding(props) {
   const { colors } = useTheme();
@@ -34,14 +35,7 @@ export default function OnBoarding(props) {
     >
       {/* onBoarding Page 1 */}
       <View style={onBoardingStyles.slide1}>
-        <View
-          style={{
-            justifyContent: "flex-end",
-            alignItems: "flex-end",
-            paddingTop: 40,
-            paddingRight: 20,
-          }}
-        >
+        <View style={onBoardingStyles.skip}>
           <Button onPress={() => navigation.navigate("signin")}>
             <Text style={onBoardingStyles.text}>Skip</Text>
           </Button>
@@ -51,7 +45,7 @@ export default function OnBoarding(props) {
           <View style={onBoardingStyles.imgWrap}>
             <Image source={ob1} />
           </View>
-          <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.pink]}>
+          <Text style={{...onBoardingStyles.headerTxt, ...onBoardingStyles.pink}}>
             Coliving 
           </Text>
           <Text style={onBoardingStyles.text}>
@@ -64,14 +58,7 @@ export default function OnBoarding(props) {
 
       {/* onBoarding Page 2 */}
       <View style={onBoardingStyles.slide2}>
-        <View
-          style={{
-            justifyContent: "flex-end",
-            alignItems: "flex-end",
-            paddingTop: 40,
-            paddingRight: 20,
-          }}
-        >
+      <View style={onBoardingStyles.skip}>
           <Button onPress={() => navigation.navigate("signin")}>
             <Text style={onBoardingStyles.text}>Skip</Text>
           </Button>
@@ -80,7 +67,7 @@ export default function OnBoarding(props) {
           <View style={onBoardingStyles.imgWrap}>
             <Image source={ob2} />
           </View>
-          <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.blue]}>
+          <Text style={{...onBoardingStyles.headerTxt, ...onBoardingStyles.blue}}>
             Women 
           </Text>
           <Text style={onBoardingStyles.text}>
@@ -93,15 +80,7 @@ export default function OnBoarding(props) {
 
       {/* onBoarding Page 3 */}
       <View style={onBoardingStyles.slide3}>
-        <View style={onBoardingStyles.slide3}>
-          <View
-            style={{
-              justifyContent: "flex-end",
-              alignItems: "flex-end",
-              paddingTop: 40,
-              paddingRight: 20,
-            }}
-          >
+        <View style={onBoardingStyles.skip}>
             <Button onPress={() => navigation.navigate("signin")}>
               <Text style={onBoardingStyles.text}>Skip</Text>
             </Button>
@@ -110,7 +89,7 @@ export default function OnBoarding(props) {
             <View style={onBoardingStyles.imgWrap}>
               <Image source={ob3} />
             </View>
-            <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.pink]}>
+            <Text style={{...onBoardingStyles.headerTxt, ...onBoardingStyles.pink}}>
               Community
             </Text>
             <Text style={onBoardingStyles.text}>
@@ -130,7 +109,6 @@ export default function OnBoarding(props) {
             />
           </View>
         </View>
-      </View>
     </Swiper>
   );
 }

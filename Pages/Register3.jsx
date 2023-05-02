@@ -1,98 +1,165 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
-import { Button } from "react-native-paper";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+} from "react-native";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
-import { TextInput } from "react-native-paper";
-import { IconButton } from "react-native-paper";
+import { TextInput, IconButton, Button,HelperText } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import theme from "./pageStyles/theme.js";
-import loginStyles from "./pageStyles/loginStyles";
-import { ToggleButton } from "react-native-paper";
+import theme from "../Styles/theme.js";
+import loginStyles from "../Styles/Pages/loginStyles";
 import StyledDialog from "../Components/StyledDialogs";
+import SignInHeader from "../Components/SignInHeader";
+import AccordionPicker from "../Components/AccordionPicker";
+import signStyles from "../Styles/Pages/signStyles";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
-export default function Register2() {
+export default function Register3({ route }) {
+  const reg2Data = route.params;
   const navigation = useNavigation();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [value, setValue] = React.useState("left");
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      loc: "",
+      job: "",
+      dob: "",
+      age: [],
+      traits: [],
+      interests: [],
+    },
+  });
 
-  const handleBackPress = () => {
-    navigation.goBack();
+  const onSubmit = (data) => {
+    reg3Data = Object.assign(data, reg2Data);
+    console.log(reg3Data);
+    navigation.navigate("drawermanager");
   };
 
-  const handleOnClick = (e) => {
-    if (text !== "hi") {
-      setText("hi");
-    } else {
-      setText("bye");
-    }
+  const updateList = (value, arr, set) => {
+    if (arr.includes(value)) arr.splice(value, 1);
+    else arr.push(value);
   };
 
   return (
     <>
-      <View style={{ paddingHorizontal: 20, paddingTop: 20, backgroundColor: "white" }}>
-        <IconButton icon={() => <Ionicons name="arrow-back" size={24} />} onPress={handleBackPress} />
-      </View>
+      <SignInHeader title={"Register"} />
 
       <View style={theme.page}>
         <View style={{ backgroundColor: theme.white }}>
-          <Text style={{ paddingHorizontal: 20, paddingBottom: 20, paddingTop: 20, fontWeight: "bold", fontSize: 32 }}>
-            Register
-          </Text>
-          <Text style={{ paddingHorizontal: 20, paddingBottom: 20, paddingTop: 20, fontSize: 24 }}>Set up Profile</Text>
+          <Text style={signStyles.subheader}>Select up Profile</Text>
         </View>
 
         <View style={loginStyles.container}>
-          <TextInput
-            label="Email*"
-            value={email}
-            onChangeText={(email) => setEmail(email)}
-            style={theme.textField}
-            required
+          <Controller
+            control={control}
+            name="loc"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <TextInput
+                label="Location"
+                value={value}
+                onChangeText={(value) => onChange(value)}
+                style={theme.textField}
+              />
+            )}
           />
-          <TextInput
-            label="Confirm Email Address*"
-            value={password}
-            onChangeText={(password) => setPassword(password)}
-            style={theme.textField}
-            required
-          />
-          <TextInput
-            label="Create Password*"
-            value={password}
-            onChangeText={(password) => setPassword(password)}
-            style={theme.textField}
-            required
-          />
-          <TextInput
-            label="Confirm Password*"
-            value={password}
-            onChangeText={(password) => setPassword(password)}
-            style={theme.textField}
-            required
-          />
-          <TextInput
-            label="Email*"
-            value={email}
-            onChangeText={(email) => setEmail(email)}
-            style={theme.textField}
-            required
-          />
-          <TextInput
-            label="Email*"
-            value={email}
-            onChangeText={(email) => setEmail(email)}
-            style={theme.textField}
-            required
+          <Controller
+            control={control}
+            name="age"
+            rules={{ required: { value: true, message: "Field is required" } }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <>
+                <AccordionPicker
+                  placeholder="Age Range*"
+                  itemList={["18-29", "30-39", "40-49"]}
+                  selected={value}
+                  onSelect={(value) => onChange(value)}
+                />
+                <HelperText style={{ height: 25 }} type="error">
+                  {errors.age?.message}
+                </HelperText>
+              </>
+            )}
           />
 
+          <Controller
+            control={control}
+            name="job"
+            rules={{ required: { value: true, message: "Field is required" } }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <>
+                <TextInput
+                  label="Occupation*"
+                  value={value}
+                  onBlur={onBlur}
+                  onChangeText={(value) => onChange(value)}
+                  style={theme.textField}
+                />
+                <HelperText style={{ height: 25 }} type="error">
+                  {errors.job?.message}
+                </HelperText>
+              </>
+            )}
+          />
+          <Controller
+            control={control}
+            name="dob"
+            rules={{ required: { value: true, message: "Field is required" } }}
+            render={({ field: { onChange, onBlur, value } }) => (
+              <>
+                <TextInput
+                  label="Date of birth*"
+                  value={value}
+                  onBlur={onBlur}
+                  onChangeText={(value) => onChange(value)}
+                  style={theme.textField}
+                />
+                <HelperText style={{ height: 25 }} type="error">
+                  {errors.dob?.message}
+                </HelperText>
+              </>
+            )}
+          />
+          <Controller
+            control={control}
+            name="traits"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <AccordionPicker
+                placeholder="Personality Traits"
+                itemList={["A", "B", "C"]}
+                selected={value}
+                multiselect={true}
+                onSelect={(item) => updateList(item, value, onChange)}
+              />
+            )}
+          />
+          <Controller
+            control={control}
+            name="interests"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <AccordionPicker
+                placeholder="Interests"
+                itemList={["A", "B", "C"]}
+                selected={value}
+                multiselect={true}
+                onSelect={(item) => updateList(item, value, onChange)}
+              />
+            )}
+          />
           <View style={{ paddingVertical: 20 }}>
-            <StyledDialog>
-              <StyledButton variant="pinkBtn" text="Finish" />
-            </StyledDialog>
+            <StyledButton
+              variant="contained"
+              outerStyle={{ backgroundColor: reg2Data.role }}
+              text="Finish"
+              onPress={handleSubmit(onSubmit)}
+            />
           </View>
         </View>
       </View>
