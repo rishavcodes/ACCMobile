@@ -15,7 +15,7 @@ import theme from "../Styles/theme.js";
 import loginStyles from "../Styles/Pages/loginStyles";
 import StyledDialog from "../Components/StyledDialogs";
 import SignInHeader from "../Components/SignInHeader";
-import AccordionPicker from "../Components/AccordionPicker";
+import Picker from "../Components/Picker";
 import signStyles from "../Styles/Pages/signStyles";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
@@ -76,7 +76,7 @@ export default function Register3({ route }) {
             rules={{ required: { value: true, message: "Field is required" } }}
             render={({ field: { onChange, onBlur, value } }) => (
               <>
-                <AccordionPicker
+                <Picker
                   placeholder="Age Range*"
                   itemList={["18-29", "30-39", "40-49"]}
                   selected={value}
@@ -131,7 +131,7 @@ export default function Register3({ route }) {
             control={control}
             name="traits"
             render={({ field: { onChange, onBlur, value } }) => (
-              <AccordionPicker
+              <Picker
                 placeholder="Personality Traits"
                 itemList={["A", "B", "C"]}
                 selected={value}
@@ -144,7 +144,7 @@ export default function Register3({ route }) {
             control={control}
             name="interests"
             render={({ field: { onChange, onBlur, value } }) => (
-              <AccordionPicker
+              <Picker
                 placeholder="Interests"
                 itemList={["A", "B", "C"]}
                 selected={value}

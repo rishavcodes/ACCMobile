@@ -3,8 +3,8 @@ import {Checkbox,Text,IconButton,Dialog,Portal,Divider} from "react-native-paper
 import Ionicons from "@expo/vector-icons/Ionicons";
 import StyledButton from "./StyledButton";
 import { StyleSheet, View } from "react-native";
-import APickerStyle from "../Styles/Components/APickerStyle";
-function AccordionPicker(props) {
+import PickerStyle from "../Styles/Components/PickerStyle";
+function Picker(props) {
   const { placeholder, selected, onSelect, itemList, multiselect } = props;
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -18,16 +18,16 @@ function AccordionPicker(props) {
 
   return (
     <>
-      <View style={{...APickerStyle.accordionButton, borderColor: borderColor}} onPress={() => setDialogOpen(true)}>
+      <View style={{...PickerStyle.accordionButton, borderColor: borderColor}} onPress={() => setDialogOpen(true)}>
         <Text
           numberOfLines={1}
-          style={APickerStyle.accordionText}
+          style={PickerStyle.accordionText}
           onPress={() => setDialogOpen(true)}
         >
           {selected.length != 0 ? selected.toString() : placeholder}
         </Text>
         <IconButton
-          style={APickerStyle.accordionBtnIcon}
+          style={PickerStyle.accordionBtnIcon}
           icon={() => <Ionicons name={icon} size={24} color={"black"} />}
           onPress={() => setDialogOpen(true)}
         />
@@ -46,7 +46,7 @@ function AccordionPicker(props) {
                 {!multiselect && (
                   <StyledButton
                     variant="text"
-                    labelStyle={APickerStyle.text}
+                    labelStyle={PickerStyle.text}
                     text={item}
                     onPress={() =>closeAndUpdate(item)}
                   />
@@ -69,4 +69,4 @@ function AccordionPicker(props) {
   );
 }
 
-export default AccordionPicker;
+export default Picker;
