@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native-web";
 
 export default StyleSheet.create({
-    navcard: {
+    card: {
         width: 350,
         height: 100,
         padding: 20,
@@ -12,10 +12,10 @@ export default StyleSheet.create({
         shadowOffset: {width: 0, height: 4},
         shadowOpacity: 0.2,
         shadowRadius: 10,
-        elevation: 5,
         marginTop: 5,
         marginBottom: 5,
         color: "#000000",
+        overflow: 'hidden',
     },
     lines: {
         lineHeight: 19
