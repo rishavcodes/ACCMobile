@@ -7,6 +7,7 @@ import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-paper";
 import { IconButton } from "react-native-paper";
+import theme from "../Styles/theme.js";
 import icon from "../assets/images/white-icon.png";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import themeStyles from "../Styles/theme.js";

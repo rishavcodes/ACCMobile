@@ -96,15 +96,16 @@ export default function OnBoarding(props) {
               The Aisha Community is a place where women can connect, network,
               and build friendships through our online and in-person events.
             </Text>
+            {/* Skip Icon Button */}
             <IconButton
               icon={() => (
                 <Ionicons
                   name="md-checkmark-circle"
-                  size={60}
+                  size={40}
                   color={colors.primary}
                 />
               )}
-              size={50}
+              size={30}
               onPress={() => navigation.navigate("signin")}
             />
           </View>

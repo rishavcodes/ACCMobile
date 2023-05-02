@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native-web";
 import theme from "../theme";
 
 export default StyleSheet.create({
-
   slide1: {
     flex: 1,
     backgroundColor: "#fff",
@@ -21,7 +20,7 @@ export default StyleSheet.create({
     paddingTop: 40,
     paddingRight: 20,
   },
-  text:{
+  text: {
     textAlign: "center",
     fontFamily: theme.fonts.regular,
     color: "black",
@@ -37,13 +36,13 @@ export default StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 40,
   },
-  blue:{
+  blue: {
     color: theme.Colors.blue,
   },
-  pink:{
+  pink: {
     color: theme.Colors.pink,
   },
-  imgWrap:{
-    marginBottom: 50,
-  }
+  imgWrap: {
+    marginBottom: 30,
+  },
 });
