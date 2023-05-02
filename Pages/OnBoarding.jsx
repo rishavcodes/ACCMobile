@@ -117,6 +117,7 @@ export default function OnBoarding(props) {
               The Aisha Community is a place where women can connect, network,
               and build friendships through our online and in-person events.
             </Text>
+            {/* Skip Icon Button */}
             <IconButton
               icon={() => (
                 <Ionicons
