@@ -7,7 +7,7 @@ function Notification(props) {
 
     return (
         <>
-            <View style={NotificationStyles.navcard}>
+            <View style={NotificationStyles.card}>
                 <View style={NotificationStyles.textContainer}>
                     <Text style={NotificationStyles.lines}>
                         <Text style={NotificationStyles.text}>{text} </Text>
