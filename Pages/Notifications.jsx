@@ -13,6 +13,13 @@ import Notification from "../Components/Notification";
 import NotificationStyles from "../Components/componentStyles.js/NotificationStyles";
 
 export default function Notifications() {
+  /**
+   * The Page that displays all notifications of the user.
+   * ------------------------------------------------------------------------------
+   * Note:
+   * Search bar should be able to search for all existing notifications
+   * Currrently there is no way to delete notifications
+   */
   const [text, setText] = useState("");
 
   const notifications = [

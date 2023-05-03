@@ -3,6 +3,12 @@ import NotificationStyles from "./componentStyles.js/NotificationStyles";
 import { Text, View } from "react-native";
 
 function Notification(props) {
+    /**
+     * Displays the notification of the user based on the props passed in
+     * --------------------------------------------------------------------
+     * Usage:
+     * <Notification ...props/>
+     */
     const {text, linkText, link} = props
 
     return (

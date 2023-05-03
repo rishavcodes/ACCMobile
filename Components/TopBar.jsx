@@ -3,6 +3,12 @@ import { Appbar, Drawer } from "react-native-paper";
 import { StyleSheet, View } from "react-native";
 
 function TopBar(props) {
+  /**
+   * TopBar component to be displayed on top of all pages
+   * -----------------------------------------------------------
+   * Note:
+   * Currently this component is overrided by the default DrawerManager header component. And will not be displayed.
+   */
   const [drawerVisible, setDrawerVisible] = useState(false);
 
   const openDrawer = () => {

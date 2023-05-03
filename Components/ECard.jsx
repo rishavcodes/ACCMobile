@@ -15,6 +15,14 @@ function capitalizeFirstLetter(str) {
 }
 
 function ECard(props) {
+  /**
+   * ECard component is a custom card component that allows the user to pass in props, in which it displays
+   * the details regarding events, listings, etc... The styling is refered from the figma. 
+   * --------------------------------------------------------------------------------------------------------------
+   * Usage: 
+   * To call on ECard components use <ECard ...props/>
+   * list of avilable props below (add props if required) ->
+   */
   const {
     variant,
     blog,
@@ -141,13 +149,13 @@ function ECard(props) {
             <View style={{ backgroundColor: "gray", height: 140, width: "35%" }}></View>
 
             <View style={ECardEventStyle.cardContent}>
-              <Title style={{fontFamily: "msBold"}}>Trivia Night IRL</Title>
+              <Title style={{ fontFamily: "msBold" }}>Trivia Night IRL</Title>
               <View style={ECardEventStyle.locationContainer}>
                 <MaterialCommunityIcons name="map-marker" color="#F83E7D" size={15} />
                 <Title style={ECardEventStyle.location}>{location}</Title>
               </View>
-              <View style={{borderRadius: 15, backgroundColor: "#F83E7D", width: "40%", alignItems: "center" }}>
-                <Title style={{...ECardEventStyle.location, color: "white"}}>Online</Title>
+              <View style={{ borderRadius: 15, backgroundColor: "#F83E7D", width: "40%", alignItems: "center" }}>
+                <Title style={{ ...ECardEventStyle.location, color: "white" }}>Online</Title>
               </View>
 
               <View style={ECardEventStyle.grid}>
