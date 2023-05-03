@@ -18,11 +18,12 @@ export default StyleSheet.create({
     textAlign: "center",
     fontFamily: theme.fonts.regular,
     color: "black",
-    marginBottom: 30,
+    marginBottom: 90,
   },
   headerTxt: {
     fontSize: theme.fontSizes.h1,
     fontFamily: theme.fonts.bold,
+    marginBottom: 30,
   },
   center: {
     flex: 1,
@@ -38,5 +39,28 @@ export default StyleSheet.create({
   },
   imgWrap: {
     marginBottom: 30,
+  },
+  // Onboarding Page Style
+  onboardingHeader: {
+    fontFamily: theme.fonts.bold,
+    fontWeight: 700,
+    fontStyle: 'normal',
+    fontSize: 48,
+    marginBottom: 30,
+    letterSpacing: 1.5,
+    lineHeight: 50,
+  },
+  onboardingText: {
+    fontFamily: theme.fonts.medium,
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontSize: 16,
+    color: "black",
+    lineHeight: 23,
+    textAlign: "center",
+  },
+  checkmark: {
+    // marginTop: 30,
+    // position:'absol  ute', bottom: 0
   },
 });
