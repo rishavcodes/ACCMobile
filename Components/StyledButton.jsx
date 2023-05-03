@@ -16,7 +16,7 @@ function StyledButton(props) {
   return (
     <>
       {variant === "contained" && (
-        <Button mode="contained" style={{...SButtonStyle.contained,...outerStyle}} 
+        <Button mode="elevated" style={{...SButtonStyle.contained,...outerStyle}} 
           labelStyle={{...SButtonStyle.containedText,...labelStyle}} onPress={pressed}>
           {text}
         </Button>
@@ -26,6 +26,12 @@ function StyledButton(props) {
           labelStyle={{...SButtonStyle.plainText,...labelStyle}} onPress={pressed}>
           {text}
         </Button>
+      )}
+       {variant === "outlined" && (
+       <Button mode="outlined" style={{...SButtonStyle.outlined,...outerStyle}} 
+       labelStyle={{...SButtonStyle.plainText,...labelStyle}} onPress={pressed}>
+       {text}
+     </Button>
       )}
     </>
   );

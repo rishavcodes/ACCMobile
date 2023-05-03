@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Checkbox,Text,IconButton,Dialog,Portal,Divider} from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import StyledButton from "./StyledButton";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import PickerStyle from "../Styles/Components/PickerStyle";
 function Picker(props) {
   const { placeholder, selected, onSelect, itemList, multiselect } = props;
@@ -18,7 +18,7 @@ function Picker(props) {
 
   return (
     <>
-      <View style={{...PickerStyle.accordionButton, borderColor: borderColor}} onPress={() => setDialogOpen(true)}>
+      <TouchableOpacity style={{...PickerStyle.accordionButton, borderColor: borderColor}} onPress={() => setDialogOpen(true)}>
         <Text
           numberOfLines={1}
           style={PickerStyle.accordionText}
@@ -31,7 +31,7 @@ function Picker(props) {
           icon={() => <Ionicons name={icon} size={24} color={"black"} />}
           onPress={() => setDialogOpen(true)}
         />
-      </View>
+      </TouchableOpacity>
       <Portal>
         <Dialog
           style={{ backgroundColor: "white" }}

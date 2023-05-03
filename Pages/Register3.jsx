@@ -21,10 +21,12 @@ import SignInHeader from "../Components/SignInHeader";
 import Picker from "../Components/Picker";
 import signStyles from "../Styles/Pages/signStyles";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import EmailPopup from "../Components/EmailPopup";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function Register3({ route }) {
   const reg2Data = route.params;
+  const [emailPopup,setEmailPopup] = useState(false)
   const navigation = useNavigation();
   const {
     control,
@@ -44,7 +46,7 @@ export default function Register3({ route }) {
   const onSubmit = (data) => {
     reg3Data = Object.assign(data, reg2Data);
     console.log(reg3Data);
-    navigation.navigate("drawermanager");
+    setEmailPopup(true)
   };
 
   const updateList = (value, arr, set) => {
@@ -71,7 +73,7 @@ export default function Register3({ route }) {
                 label="Location"
                 value={value}
                 onChangeText={(value) => onChange(value)}
-                style={theme.textField}
+                style={{...theme.textField,marginBottom:10}}
               />
             )}
           />
@@ -145,6 +147,7 @@ export default function Register3({ route }) {
               />
             )}
           />
+          <View style={{paddingVertical:10}}/>
           <Controller
             control={control}
             name="interests"
@@ -169,6 +172,7 @@ export default function Register3({ route }) {
         </View>
       </TouchableWithoutFeedback>
       </KeyboardAwareScrollView>
+      <EmailPopup visible={emailPopup} onDismiss={()=>setEmailPopup(false)} color={reg2Data.role} email={reg2Data.email}/>
     </>
   );
 }
