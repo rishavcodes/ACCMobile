@@ -27,19 +27,21 @@ export default function Notifications() {
 
   return (
     <>
-      <Searchbar
+    <Searchbar 
+      style={{backgroundColor:"white"}}
       placeholder="Search"
       onChangeText={(text)=>setText(text)}
       value={text}
     />
       <View style={landingStyles.container}>
         <ScrollView style={NotificationStyles.notifications}>
-          {notifications.text.indexOf(text) >= 0 && notifications.map(notification => 
-            <Notification
+        {notifications.map(notification => 
+        <>
+            {notification.text.includes(text)&&<Notification
               text={notification.text}
               linkText={notification.linkText}
               link={notification.link}
-            />)}
+            />}</>)}
         </ScrollView>
       </View>
     </>
