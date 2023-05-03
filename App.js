@@ -5,7 +5,7 @@ import { DefaultTheme, Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "./Components/BottomBar";
 import TopBar from "./Components/TopBar";
-import SearchBar from "./Components/SearchBar";
+
 import Landing from "./Pages/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
