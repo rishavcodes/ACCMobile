@@ -6,6 +6,9 @@ import {
   Text,
   View,
   ImageBackground,
+  TouchableWithoutFeedback,
+  Keyboard,
+  KeyboardAvoidingView,
 } from "react-native";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
@@ -18,6 +21,7 @@ import SignInHeader from "../Components/SignInHeader";
 import Picker from "../Components/Picker";
 import signStyles from "../Styles/Pages/signStyles";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function Register3({ route }) {
   const reg2Data = route.params;
@@ -52,12 +56,13 @@ export default function Register3({ route }) {
     <>
       <SignInHeader title={"Register"} />
 
-      <View style={theme.page}>
+      <KeyboardAwareScrollView style={theme.page}
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={{ backgroundColor: theme.white }}>
           <Text style={signStyles.subheader}>Select up Profile</Text>
         </View>
-
-        <View style={loginStyles.container}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={loginStyles.container}>
           <Controller
             control={control}
             name="loc"
@@ -162,7 +167,8 @@ export default function Register3({ route }) {
             />
           </View>
         </View>
-      </View>
+      </TouchableWithoutFeedback>
+      </KeyboardAwareScrollView>
     </>
   );
 }

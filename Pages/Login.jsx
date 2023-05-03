@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View, ImageBackground,Image } from "react-native";
+import { ScrollView, StyleSheet, Text, View, KeyboardAvoidingView,Keyboard,TouchableWithoutFeedback, ImageBackground,Image } from "react-native";
 import { HelperText, Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import StyledButton from "../Components/StyledButton";
@@ -14,7 +14,7 @@ import themeStyles from "../Styles/theme.js";
 import loginStyles from "../Styles/Pages/loginStyles";
 import SignInHeader from "../Components/SignInHeader";
 import { useForm, Controller, SubmitHandler } from "react-hook-form"
-
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function Login() {
   const navigation = useNavigation();
@@ -30,9 +30,12 @@ export default function Login() {
   }
 
   return (
-    <>
+     <>
       <SignInHeader bkgColor={"#0045F1"} fgColor="white" image={icon} title={"Welcome back to \nAisha\n Comfortable Coliving"}/>
-      <View style={themeStyles.page}>
+      <KeyboardAwareScrollView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={themeStyles.page}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <>
         <View style={{ backgroundColor: themeStyles.white, paddingTop: 30 }}>
           <Text style={loginStyles.subheader}>
             Sign in
@@ -92,7 +95,9 @@ export default function Login() {
             </View>
           </View>
         </View>
-      </View>
+        </>
+        </TouchableWithoutFeedback>
+      </KeyboardAwareScrollView>
     </>
   );
 }

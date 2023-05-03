@@ -37,7 +37,7 @@ export default StyleSheet.create({
         paddingHorizontal: 20, 
         paddingBottom: 20, 
         paddingTop: 20, 
-        fontSize: 24, 
+        fontSize: 20, 
         fontWeight: "bold"},
     subheader2: { 
         paddingHorizontal: 10, 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   ScrollView,
@@ -7,6 +7,8 @@ import {
   View,
   ImageBackground,
   Image,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import { Provider as PaperProvider, RadioButton } from "react-native-paper";
 import { Button } from "react-native-paper";
@@ -18,6 +20,7 @@ import {
   Checkbox,
   HelperText,
 } from "react-native-paper";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import icon from "../assets/images/primary-icon.png";
 import theme from "../Styles/theme.js";
 import loginStyles from "../Styles/Pages/loginStyles";
@@ -27,6 +30,7 @@ import { useForm, Controller, SubmitHandler } from "react-hook-form";
 
 export default function Register() {
   const navigation = useNavigation();
+  const ref = useRef();
   const {
     control,
     handleSubmit,
@@ -56,8 +60,10 @@ export default function Register() {
         subtitle={"We are so glad you’re here!"}
       />
 
-      <View style={theme.page}>
-        <View style={loginStyles.container}>
+    <KeyboardAwareScrollView style={theme.page}
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+       <View style={loginStyles.container}>
           <Controller
             control={control}
             name="email"
@@ -179,7 +185,8 @@ export default function Register() {
             />
           </View>
         </View>
-      </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAwareScrollView>
     </>
   );
 }

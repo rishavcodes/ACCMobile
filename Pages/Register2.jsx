@@ -76,7 +76,7 @@ export default function Register2({ route }) {
                     }}
                   />
                 </View>
-                <View style={{ flexDirection: "row", marginBottom: 15 }}>
+                <View style={{ flexDirection: "row", marginBottom: 5 }}>
                   <RoleBox
                     text="Property Owner"
                     color="#113170"
@@ -99,13 +99,13 @@ export default function Register2({ route }) {
               </>
             )}
           />
-          <Text style={{ color: watch("role"), textAlign: "center", height: 30 }}>
+          <Text style={{ color: watch("role"), textAlign: "center", height:50}}>
             {watch("role") == "#F83E7D" && "I am looking to rent a shared accomodation"}
             {watch("role") == "#0045F1" &&  "I’m a woman homeowner looking for a woman tenant to share my accommodation with me."}
             {watch("role") == "#113170" && "Property owner description"}
             {watch("role") == "#C5265C" && "Other description"}
           </Text>
-          <View style={{ paddingVertical: 20 }}>
+          <View style={{ paddingVertical: 10 }}>
             <StyledButton
               variant="contained"
               outerStyle={{ backgroundColor: watch("role") }}

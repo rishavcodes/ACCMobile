@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
 import { Button } from "react-native-paper";
-import homepage from "../assets/images/homepage.png";
+import homepage from "../assets/images/blueSignIn.png"
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
 import signStyles from "../Styles/Pages/signStyles.js";
@@ -24,7 +24,7 @@ export default function SignIn() {
         </View>
         <View style={signStyles.footer}>
             <View>
-              <StyledButton variant="contained" text="Sign In" link="login"/>
+              <StyledButton  variant="contained" outerStyle={{backgroundColor:"#0045F1"}}  text="Sign In" link="login"/>
             </View>
             <View>
               <Text style={{ ...signStyles.header2, color: "#fff" }}>Don’t have an account?</Text>

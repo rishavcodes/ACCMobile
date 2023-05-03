@@ -6,7 +6,6 @@ import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 import SearchBar from "../Components/SearchBar";
-import homepage from "../assets/images/homepage.png";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
 import theme from "../Styles/theme";
