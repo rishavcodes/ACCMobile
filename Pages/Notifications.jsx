@@ -27,12 +27,14 @@ export default function Notifications() {
 
   return (
     <>
+    <View style={{backgroundColor:"#fff",paddingBottom:10,paddingLeft:10,paddingRight:60}}>
     <Searchbar 
-      style={{backgroundColor:"white"}}
+      style={{backgroundColor:"#F1F1F1",borderRadius:99}}
       placeholder="Search"
       onChangeText={(text)=>setText(text)}
       value={text}
     />
+    </View>
       <View style={landingStyles.container}>
         <ScrollView style={NotificationStyles.notifications}>
         {notifications.map(notification => 
