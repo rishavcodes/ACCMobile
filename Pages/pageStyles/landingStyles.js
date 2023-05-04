@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native-web";
-import theme from "../theme";
+import theme from "./theme";
 
 export default StyleSheet.create({
   container: {
     backgroundColor: theme.white,
     alignItems: "center",
+    justifyContent: "center",
     flex: 1,
   },
   searchBar: {
@@ -43,17 +44,5 @@ export default StyleSheet.create({
     marginTop: 20,
     fontWeight: 400,
     fontSize: 20,
-  },
-  subheader: {
-    paddingHorizontal: 10,
-    paddingBottom: 20,
-    paddingTop: 20,
-    fontWeight: "bold",
-    fontSize: 32,
-  },
-  textButton: {
-    color: "#0045F1",
-    textDecorationLine: "underline",
-    borderWidth: 0,
   },
 });

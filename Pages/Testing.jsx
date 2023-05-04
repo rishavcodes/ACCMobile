@@ -7,34 +7,32 @@ import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 
 import homepage from "../assets/images/homepage.png";
-import SearchBar from "../Components/SearchBar";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
-import theme from "../Styles/theme";
+import theme from "../Pages/pageStyles/theme";
 import ECard from "../Components/ECard";
 import { SafeAreaView } from "react-native-safe-area-context";
-import testingStyles from "../Styles/Pages/testingStyles"
 
 export default function Testing() {
   const navigation = useNavigation();
   return (
     <ScrollView>
-      <View style={testingStyles.container}>
-        <Text style={{ ...testingStyles.header2, color: "#22293A" }}>Testing</Text>
+      <View style={styles.container}>
+        <Text style={{ ...styles.header2, color: "#22293A" }}>Testing</Text>
 
-        <View style={testingStyles.cardContainer}>
+        <View style={styles.cardContainer}>
           <ECard variant="eventMini"></ECard>
           <ECard variant="eventMini"></ECard>
           <ECard variant="eventMini"></ECard>
           <ECard variant="eventMini"></ECard>
         </View>
-        <View style={testingStyles.cardContainer}>
+        <View style={styles.cardContainer}>
           <ECard variant="housemate"></ECard>
         </View>
-        <View style={testingStyles.cardContainer}>
+        <View style={styles.cardContainer}>
           <ECard variant="listing"></ECard>
         </View>
-        <View style={testingStyles.cardContainer}>
+        <View style={styles.cardContainer}>
           <ECard variant="event"></ECard>
         </View>
 
@@ -45,3 +43,51 @@ export default function Testing() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  cardContainer: {
+    paddingVertical: 40,
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    paddingHorizontal: 20,
+    backgroundColor: "white",
+    paddingBottom: theme.bottomBarHeight,
+  },
+  searchBar: {
+    paddingHorizontal: 20,
+  },
+  flexB: {
+    flex: 1,
+  },
+  header: {
+    color: "#fff",
+    marginTop: 30,
+    fontWeight: 700,
+    fontSize: 36,
+    textAlign: "center",
+  },
+  header2: {
+    marginTop: 20,
+    fontWeight: 400,
+    fontSize: 20,
+    textAlign: "center",
+  },
+  top: {
+    color: "#fff",
+    marginTop: 100,
+    fontWeight: "bold",
+  },
+  bottom: {
+    flex: 1,
+    marginBottom: 200,
+  },
+  boldText: {
+    fontWeight: "bold",
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: "cover",
+  },
+});

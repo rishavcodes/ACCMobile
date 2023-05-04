@@ -8,7 +8,7 @@ import TopBar from "../Components/TopBar";
 
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
-import landingStyles from "../Styles/Pages/landingStyles.js";
+import landingStyles from "./pageStyles/landingStyles.js";
 
 export default function Search() {
   const [text, setText] = useState("");
