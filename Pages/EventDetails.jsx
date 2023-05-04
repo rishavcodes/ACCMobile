@@ -7,7 +7,7 @@ import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
-import landingStyles from "./pageStyles/landingStyles.js";
+import landingStyles from "../Styles/Pages/landingStyles.js";
 
 export default function EventDetails() {
   const [text, setText] = useState("");

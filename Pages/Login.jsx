@@ -1,110 +1,103 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+import { ScrollView, StyleSheet, Text, View, KeyboardAvoidingView,Keyboard,TouchableWithoutFeedback, ImageBackground,Image } from "react-native";
+import { HelperText, Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-paper";
 import { IconButton } from "react-native-paper";
+import theme from "../Styles/theme.js";
+import icon from "../assets/images/white-icon.png";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import themeStyles from "../Pages/pageStyles/theme.js";
-import loginStyles from "./pageStyles/loginStyles";
+import themeStyles from "../Styles/theme.js";
+import loginStyles from "../Styles/Pages/loginStyles";
+import SignInHeader from "../Components/SignInHeader";
+import { useForm, Controller, SubmitHandler } from "react-hook-form"
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function Login() {
   const navigation = useNavigation();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleBackPress = () => {
-    navigation.goBack();
-  };
-
-  const handleOnClick = (e) => {
-    if (text !== "hi") {
-      setText("hi");
-    } else {
-      setText("bye");
+  const { control, handleSubmit, formState: { errors } } = useForm({
+    defaultValues: {
+      email: '',
+      password: ''
     }
-  };
+  });
+  const onSubmit = data => {
+    console.log(data);
+    navigation.navigate("drawermanager")
+  }
 
   return (
-    <>
-      <View>
-        <View style={{ paddingHorizontal: 20, paddingTop: 20, backgroundColor: "#0045F1" }}>
-          <IconButton icon={() => <Ionicons name="arrow-back" size={24} color="white" />} onPress={handleBackPress} />
-        </View>
-        <View style={{ alignItems: "center", backgroundColor: "#0045F1", paddingTop: 100 }}>
-          <Text
-            style={{
-              ...themeStyles.header,
-              paddingHorizontal: 20,
-              paddingVertical: 20,
-              color: themeStyles.white,
-              fontSize: 28,
-              textAlign: "center",
-            }}>
-            Welcome back to Aisha Comfortable Coliving
-          </Text>
-        </View>
-      </View>
-      <View style={themeStyles.page}>
-        <View style={{ backgroundColor: themeStyles.white, paddingTop: 50 }}>
-          <Text style={{ paddingHorizontal: 20, paddingBottom: 20, paddingTop: 20, fontWeight: "bold", fontSize: 32 }}>
+     <>
+      <SignInHeader bkgColor={"#0045F1"} fgColor="white" image={icon} title={"Welcome back to \nAisha\n Comfortable Coliving"}/>
+      <KeyboardAwareScrollView
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={themeStyles.page}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <>
+        <View style={{ backgroundColor: themeStyles.white, paddingTop: 30 }}>
+          <Text style={loginStyles.subheader}>
             Sign in
           </Text>
         </View>
 
         <View style={loginStyles.container}>
-          
-            <TextInput
-              label="Email*"
-              value={email}
-              onChangeText={(email) => setEmail(email)}
-              style={{ backgroundColor: "#FFF", width: "100%" }}
-              required
-            />
-            <TextInput
+
+          <Controller
+            control={control}
+            name="email"
+            rules={{ required: {value:true ,message: "Field is required"}}}
+            render={({field: { onChange, onBlur, value }}) => (
+              <>
+              <TextInput
+                label="Email*"
+                value={value}
+                onBlur={onBlur}
+                onChangeText={(value) => onChange(value)}
+                style={theme.textField}
+              />
+              <HelperText style={{height:25}} type="error">{errors.email?.message}</HelperText>
+            </>
+            )}
+          />
+          <Controller
+             control={control}
+             name="password"
+             rules={{ required: {value:true ,message: "Field is required"}, 
+             pattern: {value:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,32}$/,
+             message:"One special character, digit, lower and uppercase character, and length of 6 to 16 characters required."} }}
+            render={({field: { onChange, onBlur, value }}) => (
+            <>
+              <TextInput
               label="Password*"
-              value={password}
-              onChangeText={(password) => setPassword(password)}
-              style={{ backgroundColor: "#FFF", width: "100%" }}
-              required
+              value={value}
+              onBlur={onBlur}
+              onChangeText={(value) => onChange(value)}
+              style={theme.textField}
             />
-          
-          <View style={{ paddingVertical: 20 }}>
-            <StyledButton variant="pinkBtn" text="Login" link="drawermanager"/>
+            <HelperText style={{height:45}} type="error">{errors.password?.message}</HelperText>
+          </>
+            )}
+          />
+          <View style={{ paddingVertical: 10 }}>
+            <StyledButton variant="contained" outerStyle={{backgroundColor:"#0045F1"}} text="Login" onPress={handleSubmit(onSubmit)}/>  
+            {/* link="drawermanager" */}
           </View>
           
           <View>
-            <Button onPress={() => navigation.navigate("forgotpassword")}>
-              <Text
-                style={{
-                  fontWeight: 400,
-                  fontSize: 20,
-                  textAlign: "center",
-                  textDecorationLine: "underline",
-                  paddingTop: 20,
-                }}>
-                Forgot password?
-              </Text>
-            </Button>
-            <Text style={{ ...themeStyles.header2 }}>Don’t have an account?</Text>
-
-            <Button onPress={() => navigation.navigate("register")}>
-              <Text
-                style={{
-                  fontWeight: 400,
-                  fontSize: 20,
-                  textAlign: "center",
-                  textDecorationLine: "underline",
-                }}>
-                Create Account
-              </Text>
-            </Button>
+          <StyledButton variant="text" 
+          labelStyle={loginStyles.textButton} text="Forgot password?" link="forgotpassword"/>
+      
+            <View style={{flexDirection:"row"}}>
+            <Text style={{ ...themeStyles.header2 }}>Not registered?</Text>
+            <StyledButton variant="text" labelStyle={{...loginStyles.textButton,marginTop:25}} text="Create Account" link="register"/>
+            </View>
           </View>
         </View>
-      </View>
+        </>
+        </TouchableWithoutFeedback>
+      </KeyboardAwareScrollView>
     </>
   );
 }

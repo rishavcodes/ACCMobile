@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import { Card, IconButton, Title, Paragraph, Checkbox, Avatar, Button } from "react-native-paper";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import ECardHouseMateStyle from "./componentStyles.js/ECardHouseMateStyle";
-import ECardListingStyle from "./componentStyles.js/ECardListingStyle";
-import ECardEventStyle from "./componentStyles.js/ECardEventStyle";
+import ECardHouseMateStyle from "../Styles/Components/ECardHouseMateStyle";
+import ECardListingStyle from "../Styles/Components/ECardListingStyle";
+import ECardEventStyle from "../Styles/Components/ECardEventStyle";
 import StyledButton from "./StyledButton";
-import theme from "../Pages/pageStyles/theme";
+import theme from "../Styles/theme";
 
 function capitalizeFirstLetter(str) {
   if (str) {
@@ -57,7 +57,7 @@ function ECard(props) {
               <Paragraph style={ECardHouseMateStyle.gridItem}>{capitalizeFirstLetter(occupation)}</Paragraph>
             </View>
             <View style={ECardHouseMateStyle.buttonContainer}>
-              <StyledButton variant="pinkBtn" text="See Profile" />
+              <StyledButton variant="contained" text="See Profile" />
             </View>
           </Card.Content>
         </Card>
@@ -104,7 +104,7 @@ function ECard(props) {
         <Card style={ECardEventStyle.card} elevation={5}>
           <Card.Cover style={ECardEventStyle.cardCover} source={image} />
           <View style={ECardEventStyle.buttonContainer}>
-            <StyledButton variant="pinkBtn" text={price} />
+            <StyledButton variant="contained" text={price} />
           </View>
           <Card.Content>
             <View style={ECardEventStyle.cardContent}>

@@ -3,13 +3,13 @@ import { StyleSheet } from "react-native";
 import { Appbar, FAB, useTheme } from "react-native-paper";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
-import theme from "../Pages/pageStyles/theme";
+import theme from "../Styles/theme";
 
 const BottomBar = () => {
   const navigation = useNavigation();
 
   return (
-    <Appbar style={[styles.bottom]} elevated>
+    <Appbar style={styles.bottom} elevated>
       <Appbar.Action icon="home-variant-outline" onPress={() => navigation.navigate("home")} />
       <Appbar.Action icon="magnify" onPress={() => navigation.navigate("search")} />
       <FAB mode="elevated" size="medium" icon="plus" onPress={() => {}} style={styles.fab} />

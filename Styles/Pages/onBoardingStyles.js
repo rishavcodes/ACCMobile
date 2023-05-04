@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native-web";
-import theme from "./theme";
+import theme from "../theme";
 
 export default StyleSheet.create({
   slide1: {
@@ -13,6 +13,12 @@ export default StyleSheet.create({
   slide3: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  skip:{
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
+    paddingTop: 40,
+    paddingRight: 20,
   },
   text: {
     textAlign: "center",

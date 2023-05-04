@@ -9,11 +9,12 @@ import { IconButton } from "react-native-paper";
 import { Text } from "react-native-paper";
 import { useTheme } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import onBoardingStyles from "./pageStyles/onBoardingStyles.js";
-import theme from "./pageStyles/theme";
+import onBoardingStyles from "../Styles/Pages/onBoardingStyles.js";
+import theme from "../Styles/theme";
 import ob1 from "../assets/images/onboardingImg1.png";
 import ob2 from "../assets/images/onboardingImg2.png";
 import ob3 from "../assets/images/onboardingImg3.png";
+
 
 export default function OnBoarding(props) {
   const { colors } = useTheme();
@@ -34,14 +35,7 @@ export default function OnBoarding(props) {
     >
       {/* onBoarding Page 1 */}
       <View style={onBoardingStyles.slide1}>
-        <View
-          style={{
-            justifyContent: "flex-end",
-            alignItems: "flex-end",
-            paddingTop: 40,
-            paddingRight: 20,
-          }}
-        >
+        <View style={onBoardingStyles.skip}>
           <Button onPress={() => navigation.navigate("signin")}>
             <Text style={onBoardingStyles.text}>Skip</Text>
           </Button>
@@ -51,7 +45,11 @@ export default function OnBoarding(props) {
           <View style={onBoardingStyles.imgWrap}>
             <Image source={ob1} style={{ width: 315, height: 300, marginTop: 20, }} />
           </View>
+<<<<<<< HEAD
           <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.pink]}>
+=======
+          <Text style={{...onBoardingStyles.headerTxt, ...onBoardingStyles.pink}}>
+>>>>>>> styling/signIn
             Coliving 
           </Text>
           <Text style={onBoardingStyles.onboardingText}>
@@ -64,14 +62,7 @@ export default function OnBoarding(props) {
 
       {/* onBoarding Page 2 */}
       <View style={onBoardingStyles.slide2}>
-        <View
-          style={{
-            justifyContent: "flex-end",
-            alignItems: "flex-end",
-            paddingTop: 40,
-            paddingRight: 20,
-          }}
-        >
+      <View style={onBoardingStyles.skip}>
           <Button onPress={() => navigation.navigate("signin")}>
             <Text style={onBoardingStyles.text}>Skip</Text>
           </Button>
@@ -80,7 +71,11 @@ export default function OnBoarding(props) {
           <View style={onBoardingStyles.imgWrap}>
             <Image source={ob2} style={{ width: 275, height: 290, marginTop: 20, }} />
           </View>
+<<<<<<< HEAD
           <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.blue]}>
+=======
+          <Text style={{...onBoardingStyles.headerTxt, ...onBoardingStyles.blue}}>
+>>>>>>> styling/signIn
             Women 
           </Text>
           <Text style={onBoardingStyles.onboardingText}>
@@ -93,15 +88,7 @@ export default function OnBoarding(props) {
 
       {/* onBoarding Page 3 */}
       <View style={onBoardingStyles.slide3}>
-        <View style={onBoardingStyles.slide3}>
-          <View
-            style={{
-              justifyContent: "flex-end",
-              alignItems: "flex-end",
-              paddingTop: 40,
-              paddingRight: 20,
-            }}
-          >
+        <View style={onBoardingStyles.skip}>
             <Button onPress={() => navigation.navigate("signin")}>
               <Text style={onBoardingStyles.text}>Skip</Text>
             </Button>
@@ -110,7 +97,11 @@ export default function OnBoarding(props) {
             <View style={onBoardingStyles.imgWrap}>
               <Image source={ob3} style={{ width: 290, height: 290, marginTop: 20, }} />
             </View>
+<<<<<<< HEAD
             <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.pink, {marginBottom: 30,}]}>
+=======
+            <Text style={{...onBoardingStyles.headerTxt, ...onBoardingStyles.pink}}>
+>>>>>>> styling/signIn
               Community
             </Text>
             <View style={{justifyContent: "center", alignItems: "center", flex: 0.5,}}>
@@ -135,7 +126,6 @@ export default function OnBoarding(props) {
             </View>
           </View>
         </View>
-      </View>
     </Swiper>
   );
 }
