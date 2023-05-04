@@ -5,12 +5,12 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
-import SearchBar from "../Components/SearchBar";
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
 import landingStyles from "./pageStyles/landingStyles.js";
 import Notification from "../Components/Notification";
 import NotificationStyles from "../Components/componentStyles.js/NotificationStyles";
+import { Searchbar } from 'react-native-paper';
 
 export default function Notifications() {
   const [text, setText] = useState("");
@@ -27,15 +27,23 @@ export default function Notifications() {
 
   return (
     <>
-      <SearchBar/>
+    <View style={{backgroundColor:"#fff",paddingBottom:10,paddingLeft:10,paddingRight:60}}>
+    <Searchbar 
+      style={{backgroundColor:"#F1F1F1",borderRadius:99}}
+      placeholder="Search"
+      onChangeText={(text)=>setText(text)}
+      value={text}
+    />
+    </View>
       <View style={landingStyles.container}>
         <ScrollView style={NotificationStyles.notifications}>
-          {notifications.map(notification => 
-            <Notification
+        {notifications.map(notification => 
+        <>
+            {notification.text.includes(text)&&<Notification
               text={notification.text}
               linkText={notification.linkText}
               link={notification.link}
-            />)}
+            />}</>)}
         </ScrollView>
       </View>
     </>

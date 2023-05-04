@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native-web";
 
 export default StyleSheet.create({
     card: {
-        width: 350,
+        width: "95%",
         height: 100,
         padding: 20,
         borderColor: 'rgba(17, 49, 112, 0.34)',
@@ -16,6 +16,7 @@ export default StyleSheet.create({
         marginBottom: 5,
         color: "#000000",
         overflow: 'hidden',
+        backgroundColor:"white"
     },
     lines: {
         lineHeight: 19
@@ -35,7 +36,7 @@ export default StyleSheet.create({
     },
     notifications: {
         marginBottom: 100,
-        marginTop: 36,
-        flex: 1
+        paddingTop: 36,
+        flex: 1,
     }
 });

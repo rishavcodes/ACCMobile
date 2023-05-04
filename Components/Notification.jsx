@@ -1,21 +1,21 @@
 import React from "react";
 import NotificationStyles from "./componentStyles.js/NotificationStyles";
-import { Text, View } from "react-native";
-
+import { Text, View,TouchableOpacity } from "react-native";
+import { Surface } from "react-native-paper";
 function Notification(props) {
     const {text, linkText, link} = props
 
     return (
-        <>
-            <View style={NotificationStyles.card}>
+        <TouchableOpacity onPress={()=>{}}>
+            <Surface elevation={2} style={NotificationStyles.card}>
                 <View style={NotificationStyles.textContainer}>
                     <Text style={NotificationStyles.lines}>
                         <Text style={NotificationStyles.text}>{text} </Text>
                         <Text style={NotificationStyles.linkText}>{linkText}</Text>
                     </Text>
                 </View>
-            </View>
-        </>
+            </Surface>
+        </TouchableOpacity>
     )
 }
 
