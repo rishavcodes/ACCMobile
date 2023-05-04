@@ -49,12 +49,12 @@ export default function OnBoarding(props) {
 
         <View style={onBoardingStyles.center}>
           <View style={onBoardingStyles.imgWrap}>
-            <Image source={ob1} />
+            <Image source={ob1} style={{ width: 315, height: 300, marginTop: 20, }} />
           </View>
-          <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.pink]}>
+          <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.pink]}>
             Coliving 
           </Text>
-          <Text style={onBoardingStyles.text}>
+          <Text style={onBoardingStyles.onboardingText}>
             Coliving is the newest form of wellness living, where two or more
             people share housing accommodations.
           </Text>
@@ -78,12 +78,12 @@ export default function OnBoarding(props) {
         </View>
         <View style={onBoardingStyles.center}>
           <View style={onBoardingStyles.imgWrap}>
-            <Image source={ob2} />
+            <Image source={ob2} style={{ width: 275, height: 290, marginTop: 20, }} />
           </View>
-          <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.blue]}>
+          <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.blue]}>
             Women 
           </Text>
-          <Text style={onBoardingStyles.text}>
+          <Text style={onBoardingStyles.onboardingText}>
             We support women throughout their entire Coliving experience through
             out personalized housing services.
           </Text>
@@ -108,27 +108,31 @@ export default function OnBoarding(props) {
           </View>
           <View style={onBoardingStyles.center}>
             <View style={onBoardingStyles.imgWrap}>
-              <Image source={ob3} />
+              <Image source={ob3} style={{ width: 290, height: 290, marginTop: 20, }} />
             </View>
-            <Text style={[onBoardingStyles.headerTxt, onBoardingStyles.pink]}>
+            <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.pink, {marginBottom: 30,}]}>
               Community
             </Text>
-            <Text style={onBoardingStyles.text}>
-              The Aisha Community is a place where women can connect, network,
-              and build friendships through our online and in-person events.
-            </Text>
-            {/* Skip Icon Button */}
-            <IconButton
-              icon={() => (
-                <Ionicons
-                  name="md-checkmark-circle"
-                  size={40}
-                  color={colors.primary}
-                />
-              )}
-              size={30}
-              onPress={() => navigation.navigate("signin")}
-            />
+            <View style={{justifyContent: "center", alignItems: "center", flex: 0.5,}}>
+              <Text style={[onBoardingStyles.onboardingText, {marginBottom: 10,}]}>
+                The Aisha Community is a place where women can connect, network,
+                and build friendships through our online and in-person events.
+              {/* </Text> */}
+              </Text>
+              {/* Skip Icon Button */}
+              <IconButton
+                icon={() => (
+                  <Ionicons
+                    name="md-checkmark-circle"
+                    size={50}
+                    color={colors.primary}
+                  />
+                )}
+                style={onBoardingStyles.checkmark}
+                size={50}
+                onPress={() => navigation.navigate("signin")}
+              />
+            </View>
           </View>
         </View>
       </View>
