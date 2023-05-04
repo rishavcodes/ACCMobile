@@ -6,6 +6,17 @@ import { StyleSheet } from "react-native";
 
 
 function StyledButton(props) {
+  /**
+   * Main custom StyledButton component that is similar to the Website, 
+   * allows the creation of buttons quickly through prop based development.
+   * ---------------------------------------------------------------------------------------
+   * Note:
+   * Using native buttons and styling them also works
+   * If choosing to go the styled button route, 
+   * please import all website styled buttons to the mobile one
+   * Usage:
+   * <StyledButton variant(required) ...props/>
+   */
   const navigation = useNavigation();
   const { variant, link, text, content, textColor, onClick, noArrow, width, bgcolor, type, onPress } = props;
 
