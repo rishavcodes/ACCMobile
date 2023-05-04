@@ -6,7 +6,6 @@ import { IconButton, Checkbox, Card, Text } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import theme from "../Styles/theme";
 import RBoxStyle from "../Styles/Components/RBoxStyle";
-
 function RoleBox(props) {
   const { color, text, icon, value, onPress } = props;
   checkIcon = value == color && value ? "checkmark-circle" : "checkmark-circle-outline";
