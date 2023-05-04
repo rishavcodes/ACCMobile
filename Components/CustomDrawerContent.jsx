@@ -8,7 +8,7 @@ import demoIcon from "../assets/images/adaptive-icon.png";
 
 // dummy variables to be replaced by redux API retrieval
 const username = "OliveTree12"
-const accountTypeRetrieved = "propertyOwner"; 
+const accountTypeRetrieved = "tenant"; 
 
 export default function CustomDrawerContent(props) {
   const navigation = useNavigation();
@@ -101,7 +101,7 @@ export default function CustomDrawerContent(props) {
 
   return (
       <DrawerContentScrollView {...props}>
-          <Image style={{marginTop: "-10%", width: 100, height: 100, alignSelf: "center"}}
+        <Image style={{marginTop: "-10%", width: 100, height: 100, alignSelf: "center"}}
                  source={demoIcon} />
         <Text style={{
           marginTop: "-10%",
@@ -134,24 +134,30 @@ export default function CustomDrawerContent(props) {
                       activeTintColor={accountColor}
                       activeBackgroundColor={"FFFFFF"}
                       label="Testing" 
-                      onPress={() => handleOnClick("testing", labels.length + 1)} 
-                      focused={active == labels.length + 1} 
+                      onPress={() => handleOnClick("testing", labels.length)} 
+                      focused={active == labels.length} 
           />}
         </View> 
 
-        <Button
-          textColor={accountColor}
-          style={{
-            marginTop: "85%",
-            textAlign: "center", 
-            color: accountColor
-          }}
-          labelStyle={{
-            fontSize: 18,
-            fontWeight: 600
-          }}
-        >Log Out</Button>
-      
+        <View style={{
+          flex: 1, 
+          justifyContent: "flex-end", 
+          alignItems: "center",
+          marginTop: 12,
+          marginBottom: 36
+          }}>
+          <Button
+            textColor={accountColor}
+            style={{
+              textAlign: "center", 
+              color: accountColor,
+            }}
+            labelStyle={{
+              fontSize: 18,
+              fontWeight: 600
+            }}
+          >Log Out</Button>
+        </View>
       </DrawerContentScrollView>
   );
 }
