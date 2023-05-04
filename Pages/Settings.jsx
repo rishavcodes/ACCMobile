@@ -40,6 +40,7 @@ export default function Settings() {
             </View>
             <Text style={settingStyles.subHeader}> Settings</Text>
           </View>
+          
           <Text style={settingStyles.title}>Push Notifications</Text>
             
           <View style={settingStyles.entryView}>

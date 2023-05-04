@@ -29,7 +29,7 @@ export default function Notifications() {
     <>
     <View style={{backgroundColor:"#fff",paddingBottom:10,paddingLeft:10,paddingRight:60}}>
     <Searchbar 
-      style={{backgroundColor:"#F1F1F1",borderRadius:99}}
+      style={{backgroundColor:"#F1F1F1",borderRadius:99,marginLeft: "5%"}}
       placeholder="Search"
       onChangeText={(text)=>setText(text)}
       value={text}
@@ -37,13 +37,15 @@ export default function Notifications() {
     </View>
       <View style={landingStyles.container}>
         <ScrollView style={NotificationStyles.notifications}>
+        <View style={{alignSelf: "center"}}>
         {notifications.map(notification => 
         <>
             {notification.text.includes(text)&&<Notification
               text={notification.text}
               linkText={notification.linkText}
               link={notification.link}
-            />}</>)}
+              />}</>)}
+        </View>
         </ScrollView>
       </View>
     </>
