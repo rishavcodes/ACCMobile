@@ -3,18 +3,15 @@ import theme from "./theme";
 
 export default StyleSheet.create({
   subHeader: {
-    marginTop: "-40%",
     fontWeight: 600,
     fontSize: 22,
   },
 
-  border: {
+  borderView: {
     borderBottomWidth: 3,
-    borderBottomColor: "#af1a4d", 
-    width: 75,
-    marginTop: -20,
+    borderBottomColor: "#f83e7d", 
     marginBottom: 20,
-    marginLeft: 5
+    marginLeft: 5,
   },
 
   title: {
@@ -35,12 +32,12 @@ export default StyleSheet.create({
     fontWeight: 500,
     fontSize: 12,
     fontWeight: 500,
-    paddingVertical: "2.5%"
+    paddingVertical: "5.5%"
   },
 
   switch: {
     marginLeft: 30,
-    transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }],
+    transform: [{ scaleX: 1.25 }, { scaleY: 1.25 }],
     color: "#f83e7d"
   },
 
