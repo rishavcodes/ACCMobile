@@ -48,7 +48,7 @@ export default function OnBoarding(props) {
 
         <View style={onBoardingStyles.center}>
           <View style={onBoardingStyles.imgWrap}>
-            <Image source={ob1} style={{ width: 315, height: 300, marginTop: 20, }} />
+            <Image source={ob1} style={{ width: 325, height: 315, marginTop: 20, }} />
           </View>
           <Text style={{...onBoardingStyles.onboardingHeader, color:theme.colors.tenant}}>
             Coliving 
@@ -107,7 +107,7 @@ export default function OnBoarding(props) {
           </View>
           <View style={onBoardingStyles.center}>
             <View style={onBoardingStyles.imgWrap}>
-              <Image source={ob3} style={{ width: 290, height: 290, marginTop: 20, }} />
+              <Image source={ob3} style={{ width: 300, height: 290, marginTop: 20, }} />
             </View>
             <Text style={{...onBoardingStyles.onboardingHeader, color:theme.colors.tenant, marginBottom: 30,}}>
               Community

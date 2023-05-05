@@ -34,41 +34,46 @@ export default function Settings() {
   return (
     <>
       <View style={theme.container}>
-        <View style={{ width: "125%", paddingHorizontal: 80, paddingVertical: 175, backgroundColor: "white" }}>
-          <Text style={settingStyles.subHeader}>Account Settings</Text>
-          <Text style={settingStyles.border}>   </Text>
+        <View style={{ width: "115%", paddingHorizontal: 100, paddingVertical: 300, backgroundColor: "white" }}>
+          <View style={{ flexDirection: "row", marginTop: "-70%" }}>
+            <View style={settingStyles.borderView}>
+              <Text style={settingStyles.subHeader}>Account</Text>
+            </View>
+            <Text style={settingStyles.subHeader}> Settings</Text>
+          </View>
+          
           <Text style={settingStyles.title}>Push Notifications</Text>
             
           <View style={settingStyles.entryView}>
             <Text style={settingStyles.entryText}>{notifications[0].title}</Text>
-            <Switch color={"#af1a4d"} style={settingStyles.switch} value={notifications[0].toggleStatus} onValueChange={() => toggleSwitch(0)}></Switch>
+            <Switch color={"#f83e7d"} style={settingStyles.switch} value={notifications[0].toggleStatus} onValueChange={() => toggleSwitch(0)}></Switch>
           </View>
           
           <View style={settingStyles.entryView}>
             <Text style={settingStyles.entryText}>{notifications[1].title}</Text>
-            <Switch color={"#af1a4d"} style={settingStyles.switch} value={notifications[1].toggleStatus} onValueChange={() => toggleSwitch(1)}></Switch>
+            <Switch color={"#f83e7d"} style={settingStyles.switch} value={notifications[1].toggleStatus} onValueChange={() => toggleSwitch(1)}></Switch>
           </View>            
 
           <View style={settingStyles.entryView}>
             <Text style={settingStyles.entryText}>{notifications[2].title}</Text>
-            <Switch color={"#af1a4d"} style={settingStyles.switch} value={notifications[2].toggleStatus} onValueChange={() => toggleSwitch(2)}></Switch>
+            <Switch color={"#f83e7d"} style={settingStyles.switch} value={notifications[2].toggleStatus} onValueChange={() => toggleSwitch(2)}></Switch>
           </View>  
 
           <View style={settingStyles.entryView}>
             <Text style={settingStyles.entryText}>{notifications[3].title}</Text>
-            <Switch color={"#af1a4d"} style={settingStyles.switch} value={notifications[3].toggleStatus} onValueChange={() => toggleSwitch(3)}></Switch>
+            <Switch color={"#f83e7d"} style={settingStyles.switch} value={notifications[3].toggleStatus} onValueChange={() => toggleSwitch(3)}></Switch>
           </View>     
 
           <Text style={settingStyles.title}>Privacy and Security</Text>      
 
           <View style={settingStyles.entryView}>
             <Text style={settingStyles.entryText}>{notifications[4].title}</Text>
-            <Switch color={"#af1a4d"} style={settingStyles.switch} value={notifications[4].toggleStatus} onValueChange={() => toggleSwitch(4)}></Switch>
+            <Switch color={"#f83e7d"} style={settingStyles.switch} value={notifications[4].toggleStatus} onValueChange={() => toggleSwitch(4)}></Switch>
           </View>   
 
           <View style={settingStyles.entryView}>
             <Text style={settingStyles.entryText}>{notifications[5].title}</Text>
-            <Switch color={"#af1a4d"} style={settingStyles.switch} value={notifications[5].toggleStatus} onValueChange={() => toggleSwitch(5)}></Switch>
+            <Switch color={"#f83e7d"} style={settingStyles.switch} value={notifications[5].toggleStatus} onValueChange={() => toggleSwitch(5)}></Switch>
           </View>   
 
         </View>
