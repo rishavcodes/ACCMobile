@@ -6,7 +6,7 @@ import ECardHouseMateStyle from "./componentStyles.js/ECardHouseMateStyle";
 import ECardListingStyle from "./componentStyles.js/ECardListingStyle";
 import ECardEventStyle from "./componentStyles.js/ECardEventStyle";
 import StyledButton from "./StyledButton";
-import theme from "../Pages/pageStyles/theme";
+
 
 function capitalizeFirstLetter(str) {
   if (str) {

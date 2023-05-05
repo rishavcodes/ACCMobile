@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native-web";
-import theme from "./theme";
-
+import baseTheme from "./baseTheme"
 export default StyleSheet.create({
   slide1: {
     flex: 1,
@@ -16,13 +15,13 @@ export default StyleSheet.create({
   },
   text: {
     textAlign: "center",
-    fontFamily: theme.fonts.regular,
+    fontFamily: baseTheme.fonts.regular,
     color: "black",
     marginBottom: 90,
   },
   headerTxt: {
-    fontSize: theme.fontSizes.h1,
-    fontFamily: theme.fonts.bold,
+    fontSize: baseTheme.fontSizes.h1,
+    fontFamily: baseTheme.fonts.bold,
     marginBottom: 30,
   },
   center: {
@@ -31,18 +30,12 @@ export default StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 40,
   },
-  blue: {
-    color: theme.Colors.blue,
-  },
-  pink: {
-    color: theme.Colors.pink,
-  },
   imgWrap: {
     marginBottom: 30,
   },
   // Onboarding Page Style
   onboardingHeader: {
-    fontFamily: theme.fonts.bold,
+    fontFamily: baseTheme.fonts.bold,
     fontWeight: 700,
     fontStyle: 'normal',
     fontSize: 48,
@@ -51,7 +44,7 @@ export default StyleSheet.create({
     lineHeight: 50,
   },
   onboardingText: {
-    fontFamily: theme.fonts.medium,
+    fontFamily: baseTheme.fonts.medium,
     fontStyle: 'normal',
     fontWeight: 400,
     fontSize: 16,

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+import { Provider as PaperProvider, useTheme } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
-import landingStyles from "./pageStyles/landingStyles.js";
+
 import { Switch } from "react-native-paper";
 import settingStyles from "./pageStyles/settingStyles.js";
 
@@ -29,10 +29,11 @@ export default function Settings() {
     newNotifications[id].toggleStatus = !newNotifications[id].toggleStatus;
     setNotifications(newNotifications);
   }
+  const theme=useTheme()
 
   return (
     <>
-      <View style={landingStyles.container}>
+      <View style={theme.container}>
         <View style={{ width: "115%", paddingHorizontal: 100, paddingVertical: 300, backgroundColor: "white" }}>
           <View style={{ flexDirection: "row", marginTop: "-70%" }}>
             <View style={settingStyles.borderView}>
