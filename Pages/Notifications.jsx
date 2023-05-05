@@ -7,7 +7,7 @@ import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
-import landingStyles from "./pageStyles/landingStyles.js";
+
 import Notification from "../Components/Notification";
 import NotificationStyles from "../Components/componentStyles.js/NotificationStyles";
 import { Searchbar } from 'react-native-paper';

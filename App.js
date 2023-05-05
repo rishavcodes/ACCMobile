@@ -22,12 +22,38 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import NavManager from "./Navigators/DrawerManager";
 import DrawerManager from "./Navigators/DrawerManager";
+import ThemeContext from "./Components/ThemeContext";
+
+import tenantTheme from "./Pages/pageStyles/tenantTheme"
+import poTheme from "./Pages/pageStyles/poTheme"
+import hoTheme from "./Pages/pageStyles/hoTheme"
+import otherTheme from "./Pages/pageStyles/otherTheme"
+import baseTheme from "./Pages/pageStyles/baseTheme";
 
 const Drawer = createDrawerNavigator();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [role, setRoleState] = React.useState("#F83E7D");
+
+  let theme = tenantTheme
+  if(role==baseTheme.colors.ho) theme = hoTheme
+  if(role==baseTheme.colors.po) theme = poTheme
+  if(role==baseTheme.colors.other) theme = otherTheme
+  
+  const setRole = React.useCallback((role) => {
+    return setRoleState(role);
+  }, [role]);
+
+  const context = React.useMemo(
+    () => ({
+      setRole,
+      role,
+    }),
+    [setRole, role]
+  );
+
   const [loaded] = useFonts({
     msBlack: require("./assets/fonts/Montserrat-Black.ttf"),
     msBlackItalic: require("./assets/fonts/Montserrat-BlackItalic.ttf"),
@@ -52,44 +78,27 @@ export default function App() {
     return null;
   }
 
-  const theme = {
-    ...DefaultTheme,
-    roundness: 2,
-    colors: {
-      ...DefaultTheme.colors,
-      primary: "#F83E7D",
-      accent: "#f1c40f",
-    },
-    fonts: {
-      ...DefaultTheme.fonts,
-      h1: {
-        fontFamily: "msLight",
-      },
-      h2: {
-        fontFamily: "Montserrat-Regular",
-        fontWeight: "normal",
-      },
-    },
-  };
-
+ 
   return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <Stack.Screen name="onboarding" component={OnBoarding} />
-          <Stack.Screen name="signin" component={SignIn} />
-          <Stack.Screen name="login" component={Login} />
-          <Stack.Screen name="register" component={Register} />
-          <Stack.Screen name="register2" component={Register2} />
-          <Stack.Screen name="register3" component={Register3} />
-          <Drawer.Screen name="forgotpassword" component={ForgetPassword} />
-          <Stack.Screen name="drawermanager" component={DrawerManager} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+    <ThemeContext.Provider value={context}>
+      <PaperProvider theme={theme}>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false,
+            }}>
+            <Stack.Screen name="onboarding" component={OnBoarding} />
+            <Stack.Screen name="signin" component={SignIn} />
+            <Stack.Screen name="login" component={Login} />
+            <Stack.Screen name="register" component={Register} />
+            <Stack.Screen name="register2" component={Register2} />
+            <Stack.Screen name="register3" component={Register3} />
+            <Drawer.Screen name="forgotpassword" component={ForgetPassword} />
+            <Stack.Screen name="drawermanager" component={DrawerManager} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </ThemeContext.Provider>
   );
 }
 

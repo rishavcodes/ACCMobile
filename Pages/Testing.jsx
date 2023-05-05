@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+import { useTheme, Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
@@ -9,15 +9,17 @@ import TopBar from "../Components/TopBar";
 import homepage from "../assets/images/homepage.png";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
-import theme from "../Pages/pageStyles/theme";
 import ECard from "../Components/ECard";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+
+
 export default function Testing() {
+  const theme = useTheme();
   const navigation = useNavigation();
   return (
     <ScrollView>
-      <View style={styles.container}>
+      <View style={{...styles.container, paddingBottom: theme.bottomBarHeight}}>
         <Text style={{ ...styles.header2, color: "#22293A" }}>Testing</Text>
 
         <View style={styles.cardContainer}>
@@ -53,7 +55,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 20,
     backgroundColor: "white",
-    paddingBottom: theme.bottomBarHeight,
   },
   searchBar: {
     paddingHorizontal: 20,

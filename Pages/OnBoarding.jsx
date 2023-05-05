@@ -10,20 +10,19 @@ import { Text } from "react-native-paper";
 import { useTheme } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import onBoardingStyles from "./pageStyles/onBoardingStyles.js";
-import theme from "./pageStyles/theme";
 import ob1 from "../assets/images/onboardingImg1.png";
 import ob2 from "../assets/images/onboardingImg2.png";
 import ob3 from "../assets/images/onboardingImg3.png";
+import ThemeContext from "../Components/ThemeContext";
+import baseTheme from "./pageStyles/baseTheme";
 
 export default function OnBoarding(props) {
-  const { colors } = useTheme();
+  const theme = useTheme();
   const navigation = useNavigation();
-
-
+ 
   const [activeIndex, setActiveIndex] = useState(0);
   const activeDotColors = [ "#F83E7D", "#0045F1", "#F83E7D",];
-
-
+  
   return (
     <Swiper
       style={onBoardingStyles.wrapper}
@@ -51,7 +50,7 @@ export default function OnBoarding(props) {
           <View style={onBoardingStyles.imgWrap}>
             <Image source={ob1} style={{ width: 315, height: 300, marginTop: 20, }} />
           </View>
-          <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.pink]}>
+          <Text style={{...onBoardingStyles.onboardingHeader, color:theme.colors.tenant}}>
             Coliving 
           </Text>
           <Text style={onBoardingStyles.onboardingText}>
@@ -80,7 +79,7 @@ export default function OnBoarding(props) {
           <View style={onBoardingStyles.imgWrap}>
             <Image source={ob2} style={{ width: 275, height: 290, marginTop: 20, }} />
           </View>
-          <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.blue]}>
+          <Text style={{...onBoardingStyles.onboardingHeader, color:theme.colors.ho}}>
             Women 
           </Text>
           <Text style={onBoardingStyles.onboardingText}>
@@ -110,7 +109,7 @@ export default function OnBoarding(props) {
             <View style={onBoardingStyles.imgWrap}>
               <Image source={ob3} style={{ width: 290, height: 290, marginTop: 20, }} />
             </View>
-            <Text style={[onBoardingStyles.onboardingHeader, onBoardingStyles.pink, {marginBottom: 30,}]}>
+            <Text style={{...onBoardingStyles.onboardingHeader, color:theme.colors.tenant, marginBottom: 30,}}>
               Community
             </Text>
             <View style={{justifyContent: "center", alignItems: "center", flex: 0.5,}}>
@@ -125,7 +124,7 @@ export default function OnBoarding(props) {
                   <Ionicons
                     name="md-checkmark-circle"
                     size={50}
-                    color={colors.primary}
+                    color={theme.role}
                   />
                 )}
                 style={onBoardingStyles.checkmark}

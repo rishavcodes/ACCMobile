@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View, ImageBackground } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+import { Provider as PaperProvider, useTheme } from "react-native-paper";
 import { Button } from "react-native-paper";
 import StyledButton from "../Components/StyledButton";
 import { useNavigation } from "@react-navigation/native";
 import { TextInput } from "react-native-paper";
 import { IconButton } from "react-native-paper";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import theme from "./pageStyles/theme.js";
+
 import loginStyles from "./pageStyles/loginStyles";
 import { ToggleButton } from "react-native-paper";
 import StyledDialog from "../Components/StyledDialogs";
 
 export default function Register2() {
+  const theme = useTheme();
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

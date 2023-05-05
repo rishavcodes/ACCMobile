@@ -1,9 +1,8 @@
 import { StyleSheet } from "react-native-web";
-import theme from "./theme";
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: theme.white,
+    backgroundColor: "#fff",
     alignItems: "center",
     flex: 1,
   },

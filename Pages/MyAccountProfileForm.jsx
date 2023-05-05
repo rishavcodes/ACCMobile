@@ -8,7 +8,7 @@ import TopBar from "../Components/TopBar";
 
 import StyledButton from "../Components/StyledButton";
 import { TextInput } from "react-native-paper";
-import landingStyles from "./pageStyles/landingStyles.js";
+
 
 export default function MyAccountProfileForm() {
   const [text, setText] = useState("");
