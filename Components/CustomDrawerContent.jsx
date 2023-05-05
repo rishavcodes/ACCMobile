@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from "@react-navigation/drawer";
 import { useNavigation } from "@react-navigation/native";
+
 import { ScrollView, StyleSheet, Text, View, Image } from "react-native";
 import { ImageBackground } from "react-native-web";
 import { Button } from 'react-native-paper';
@@ -10,7 +11,17 @@ import demoIcon from "../assets/images/adaptive-icon.png";
 const username = "OliveTree12"
 const accountTypeRetrieved = "tenant"; 
 
+
 export default function CustomDrawerContent(props) {
+  /**
+   * CustomDrawerContent is what is being displayed when the user clickes the hamburger icon. 
+   * It is an extension to the DrawerManager component.
+   * -------------------------------------------------------------------------------------------------------------------
+   * Note:
+   * Since all screens are within the TabManager, which is nested in the DrawerManager, this component as the scope of all screens
+   * to navigate to page just call the "name" of the screen.
+   * Look at current file and handleOnClick for examples. 
+   */
   const navigation = useNavigation();
   const [active, setActive] = useState(0);
 

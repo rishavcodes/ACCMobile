@@ -17,6 +17,14 @@ import CustomDrawerContent from "../Components/CustomDrawerContent";
 const Drawer = createDrawerNavigator();
 
 export default function DrawerManager() {
+  /**
+   * All screens are nested within the Drawer Manager,
+   * this allows the hamburger menu to display on all pages, and have the scope to access all tab screens.
+   * The content of the drawer is based on a CustomDrawerContent, found in components folder!
+   * Note:
+   * All pages should be nested within the TabManager, 
+   * for pages that don't have bottom tab, look into docs to disable only for that certain screen.
+   */
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "white" }}>
       <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} /> } screenOptions={{drawerPosition:"right"}}>

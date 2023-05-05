@@ -19,6 +19,16 @@ import Notifications from "../Pages/Notifications";
 const Tab = createBottomTabNavigator();
 
 export default function TabManager() {
+  /**
+   * TabManager stores all of the tab screens (apps with bottom bar) of the mobile app. 
+   * It is nested within the Drawer Manager component.
+   * Usage: 
+   * to add a screen with bottom bar to the application
+   * 1. create [file].jsx and import it as [file]
+   * 2. write <Tab.Screen name="customname" component={[file]}/>
+   * 3. note that ordering matters, and that the first component in the navigator will always be displayed first.
+   * 4. All traversals will be handled with React Navigation. Plz read docs.
+   */
   return (
     <Tab.Navigator
       screenOptions={{

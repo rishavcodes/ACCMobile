@@ -6,6 +6,13 @@ import { useNavigation } from "@react-navigation/native";
 import theme from "../Pages/pageStyles/theme";
 
 const BottomBar = () => {
+  /**
+   * BottomBar is a custom bottom navigation component, that swtiches the pages nested within the tab manager. 
+   * -------------------------------------------------------------------------------------------------------------
+   * Note:
+   * The bottom bar should be conditionally rendered based on the account types,
+   * different account types have different buttom navigations. 
+   */
   const navigation = useNavigation();
 
   return (

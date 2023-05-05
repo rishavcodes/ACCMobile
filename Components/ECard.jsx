@@ -15,19 +15,30 @@ function capitalizeFirstLetter(str) {
 }
 
 function ECard(props) {
+  /**
+   * ECard component is a custom card component that allows the user to pass in props, in which it displays
+   * the details regarding events, listings, etc... The styling is refered from the figma. 
+   * --------------------------------------------------------------------------------------------------------------
+   * Usage: 
+   * To call on ECard components use <ECard ...props/>
+   * list of avilable props below (add props if required) ->
+   */
   const {
     variant,
     blog,
     themeColor,
     date,
     time,
+    eventType = "Online",
+    title = "N/A",
     name = "N/A",
     role = "N/A",
     occupation = "N/A",
     age = "N/A",
     location = "N/A",
-    interested,
-    going,
+    interested = 0,
+    going = 0,
+    spotsAvilable = 0,
     image,
     bedrooms = "N/A",
     bathrooms = "N/A",
@@ -78,7 +89,7 @@ function ECard(props) {
               <MaterialCommunityIcons name="map-marker" color="#0045F1" size={24} />
               <Title style={ECardListingStyle.location}>{location}</Title>
             </View>
-            <Title style={ECardListingStyle.boldText}>Brand new house. Two rooms available for students.</Title>
+            <Title style={ECardListingStyle.boldText}>{title}</Title>
             <View style={ECardListingStyle.grid}>
               <Paragraph style={ECardListingStyle.gridItem}>{bedrooms} Bedroom</Paragraph>
               <Paragraph style={ECardListingStyle.gridItem}>{bathrooms} Bathroom</Paragraph>
@@ -112,7 +123,7 @@ function ECard(props) {
                 <MaterialCommunityIcons name="map-marker" color="#F83E7D" size={24} />
                 <Title style={ECardEventStyle.location}>{location}</Title>
               </View>
-              <Title style={ECardEventStyle.boldText}>Trivia Night IRL</Title>
+              <Title style={ECardEventStyle.boldText}>{title}</Title>
               <View style={ECardEventStyle.grid}>
                 <Paragraph style={ECardEventStyle.gridItem}>{bedrooms} Interested</Paragraph>
                 <Paragraph style={ECardEventStyle.gridItem}>{bathrooms} Going</Paragraph>
@@ -141,19 +152,19 @@ function ECard(props) {
             <View style={{ backgroundColor: "gray", height: 140, width: "35%" }}></View>
 
             <View style={ECardEventStyle.cardContent}>
-              <Title style={{fontFamily: "msBold"}}>Trivia Night IRL</Title>
+              <Title style={{ fontFamily: "msBold" }}>{title}</Title>
               <View style={ECardEventStyle.locationContainer}>
                 <MaterialCommunityIcons name="map-marker" color="#F83E7D" size={15} />
                 <Title style={ECardEventStyle.location}>{location}</Title>
               </View>
-              <View style={{borderRadius: 15, backgroundColor: "#F83E7D", width: "40%", alignItems: "center" }}>
-                <Title style={{...ECardEventStyle.location, color: "white"}}>Online</Title>
+              <View style={{ borderRadius: 15, backgroundColor: "#F83E7D", width: "40%", alignItems: "center" }}>
+                <Title style={{ ...ECardEventStyle.location, color: "white" }}>{eventType}</Title>
               </View>
 
               <View style={ECardEventStyle.grid}>
-                <Paragraph style={ECardEventStyle.gridItem}>{bedrooms} Interested</Paragraph>
-                <Paragraph style={ECardEventStyle.gridItem}>{bathrooms} Going</Paragraph>
-                <Paragraph style={ECardEventStyle.gridItem}>{roomsAvailable} Spots Available</Paragraph>
+                <Paragraph style={ECardEventStyle.gridItem}>{interested} Interested</Paragraph>
+                <Paragraph style={ECardEventStyle.gridItem}>{going} Going</Paragraph>
+                <Paragraph style={ECardEventStyle.gridItem}>{spotsAvilable} Spots Available</Paragraph>
               </View>
             </View>
           </View>
