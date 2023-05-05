@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+import { Provider as PaperProvider, useTheme } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
@@ -29,10 +29,11 @@ export default function Settings() {
     newNotifications[id].toggleStatus = !newNotifications[id].toggleStatus;
     setNotifications(newNotifications);
   }
+  const theme=useTheme()
 
   return (
     <>
-      <View style={landingStyles.container}>
+      <View style={theme.container}>
         <View style={{ width: "125%", paddingHorizontal: 80, paddingVertical: 175, backgroundColor: "white" }}>
           <Text style={settingStyles.subHeader}>Account Settings</Text>
           <Text style={settingStyles.border}>   </Text>

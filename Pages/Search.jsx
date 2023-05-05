@@ -12,10 +12,10 @@ import { TextInput } from "react-native-paper";
 
 export default function Search() {
   const [text, setText] = useState("");
-
+  const theme = useTheme()
   return (
     <>
-      <View style={landingStyles.container}>
+      <View style={theme.container}>
         <Text>Search Page</Text>
         <Text>To be Developed</Text>
       </View>

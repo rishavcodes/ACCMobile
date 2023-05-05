@@ -43,7 +43,7 @@ export default function ForgetPassword() {
             Forgot Password
           </Text>
         </View>
-        <View style={landingStyles.container}>
+        <View style={theme.container}>
           <TextInput
             label="Email*"
             value={email}

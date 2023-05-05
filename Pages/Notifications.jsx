@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+import { useTheme,Provider as PaperProvider } from "react-native-paper";
 import { Button } from "react-native-paper";
 import BottomBar from "../Components/BottomBar";
 import TopBar from "../Components/TopBar";
@@ -21,6 +21,7 @@ export default function Notifications() {
    * Currrently there is no way to delete notifications
    */
   const [text, setText] = useState("");
+  const theme = useTheme()
 
   const notifications = [
     {text: "Aisha Comfortable Coliving just posted a new blog!", linkText: "Check it out here", link: ""},
@@ -42,7 +43,7 @@ export default function Notifications() {
       value={text}
     />
     </View>
-      <View style={landingStyles.container}>
+      <View style={theme.container}>
         <ScrollView style={NotificationStyles.notifications}>
         {notifications.map(notification => 
         <>
