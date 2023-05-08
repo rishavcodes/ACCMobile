@@ -15,6 +15,7 @@ import Help from "../Pages/Help";
 import MyListings from "../Pages/MyListings";
 import Blogs from "../Pages/Blogs";
 import Notifications from "../Pages/Notifications";
+import MyAccountProfileForm from "../Pages/MyAccountProfileForm";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,6 +41,7 @@ export default function TabManager() {
 
       {/*Every page in related to Account */}
       <Tab.Screen name="myaccount" component={MyAccount} />
+      <Tab.Screen name="myaccountform" component={MyAccountProfileForm} />
       <Tab.Screen name="favourites" component={Favourites} />
       <Tab.Screen name="payments" component={Payments} />
       <Tab.Screen name="events" component={Events} />
